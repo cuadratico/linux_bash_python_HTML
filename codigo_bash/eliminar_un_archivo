@@ -1,8 +1,10 @@
-#!/bin/bash
-archivo=$1
-if [ -f nombre_archivo ]; then 
-rm  nombre_archivo
-echo " el archivo $archivo ha sido eliminado"
+#!/bin/bash 
+echo "que archivo quieres eliminar"
+read archivo
+archivo=$archivo
+if [ -f $archivo ]; then 
+rm $archivo
+echo "este archivo $archivo ya esta eliminado"
 else 
-echo "el archivo $archivo no existe"
+echo "este archivo $archivo no existe"
 fi
