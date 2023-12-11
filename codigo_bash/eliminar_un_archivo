@@ -1,0 +1,8 @@
+#!/bin/bash
+archivo=$1
+if [ -f nombre_archivo ]; then 
+rm  nombre_archivo
+echo " el archivo $archivo ha sido eliminado"
+else 
+echo "el archivo $archivo no existe"
+fi
