@@ -1,0 +1,8 @@
+#!/bin/bash 
+archivo=$1
+if [ -f nombre_archivo ]; then 
+mv nombre_archivo nuevo_nombre
+echo "este archivo se va a renombrar"
+else 
+echo "este archivo no existe"
+fi
