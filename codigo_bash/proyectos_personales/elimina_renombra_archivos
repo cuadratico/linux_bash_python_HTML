@@ -1,0 +1,24 @@
+#!/bin/bash
+echo -e "\e[42mque archivo quieres eliminar, con la extension\e[0m"
+read archivo
+echo -e "\e[42mque archivo quieres renombrar, con la extension\e[0m"
+read renom
+echo -e "\e[42mcual es la extension de tu archivo, con punto\e[0m"
+read extension
+echo -e "\e[42mque nombre le quieres poner a tu archivo, sin la extension\e[0m"
+read nomb
+nomb=$nomb
+renom=$renom
+extension=$extension
+archivo=$archivo
+if [ -f $archivo ]; then
+rm $archivo
+echo -e "\e[33meste archivo $archivo ya esta eliminado\e[0m"
+if [ -f $renom ]; then
+mv $renom $nomb$extension
+echo -e "\e[33mel nombre de este archivo se a cambiado a renombrado\e[0m"
+else
+echo -e "\e[33creo que algo falla\e[0m"
+fi
+fi
+
