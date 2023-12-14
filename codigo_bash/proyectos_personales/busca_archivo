@@ -1,0 +1,6 @@
+#!/bin/bash 
+echo "que archivo quieres buscar"
+read archivo
+archivo=$archivo
+busca=$(pwd)/$archivo
+echo "el archivo $archivo esta ubicado en: $busca"
