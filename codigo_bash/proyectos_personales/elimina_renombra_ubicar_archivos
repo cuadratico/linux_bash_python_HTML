@@ -10,13 +10,15 @@ read nomb
 nomb=$nomb
 renom=$renom
 extension=$extension
+ubicacion=$ubicacion
 archivo=$archivo
 if [ -f $archivo ]; then
 rm $archivo
 echo -e "\e[1;31meste archivo $archivo ya esta eliminado\e[0m"
 if [ -f $renom ]; then
 mv $renom $nomb$extension
-echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extension\e[0m"
+root=$(pwd)/$ubicacion
+echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extension y esta en: $root\e[0m"
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
 fi
