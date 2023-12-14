@@ -1,25 +1,45 @@
-#!/bin/bash
+#!/bin/bash 
+opcion=0
+menu() {
+echo "1. eliminar"
+echo "2. renombrar"
+}
+eliminar() {
 echo -e "\e[0;34mque archivo quieres eliminar, con la extension\e[0m"
 read archivo
-echo -e "\e[0;34mque archivo quieres renombrar, con la extension\e[0m"
-read renom
-echo -e "\e[0;34mcual es la extension de tu archivo, con punto\e[0m"
-read extension
-echo -e "\e[0;34mque nombre le quieres poner a tu archivo, sin la extension\e[0m"
-read nomb
-nomb=$nomb
-renom=$renom
-extension=$extension
-ubicacion=$ubicacion
 archivo=$archivo
 if [ -f $archivo ]; then
 rm $archivo
 echo -e "\e[1;31meste archivo $archivo ya esta eliminado\e[0m"
+else 
+echo -e "\e[1;31creo que algo falla\e[0m"
+fi
+}
+renombrar() {
+echo -e "\e[0;34mque archivo quieres renombrar, con la extension\e[0m"
+read renom
+echo -e "\e[0;34mcual es la extension de tu archivo, con punto\e[0m"
+read extension
+echo -e "\e[0;34mque nombre le quieres poner a tu archivo, sin la extension\e[0>
+read nomb
+renom$renom
+extension=$extension
+nomb=$nomb
 if [ -f $renom ]; then
 mv $renom $nomb$extension
 root=$(pwd)/$ubicacion
-echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extension y esta en: $root\e[0m"
+echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi>
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
 fi
-fi
+}
+while true; do
+menu
+echo  "quieres eliminar o renombrar un archivo"
+read opcion
+case $opcion in
+1) eliminar ;;
+2) renombrar ;;
+*) echo "opcion invalida" ;;
+esac 
+done
