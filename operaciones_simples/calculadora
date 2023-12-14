@@ -1,0 +1,59 @@
+  GNU nano 7.2                 calculadora.sh                          
+#!/bin/bash 
+opcion=0
+menu() {
+echo "1. sumar"
+echo "2. restar"
+echo "3. multiplicar"
+echo "4. dividir"
+}
+sumar() {
+echo "primer numero"
+read numero1
+echo "primer numero"
+read numero2 
+
+resultado=$((numero1 + numero2))
+
+echo "el resultado es: $resultado"
+}
+restar() {
+echo "primer numero"
+read numero1
+echo "primer numero"
+read numero2 
+
+resultado=$((numero1 - numero2))
+
+echo "el resultado es: $resultado"
+}
+multiplicacion() {
+echo "primer numero"
+read numero1 
+echo "primer numero"
+read numero2 
+multi=$(echo "$numero1 * $numero2" | bc)
+
+echo "el resultado es: $multi"
+}
+dividir() {
+echo "primer numero"
+read numero1 
+echo "primer numero"
+read numero2 
+
+multi=$(echo "$numero1 / $numero2" | bc)
+
+echo "el resultado es: $multi"
+}
+while true; do
+menu 
+echo "que operacion quieres hacer"
+read opcion
+case $opcion in
+1) sumar ;;
+2) restar ;;
+3) multiplicar ;;
+4) dividir ;;
+esac
+done 
