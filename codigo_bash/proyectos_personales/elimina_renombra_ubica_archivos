@@ -1,3 +1,4 @@
+  GNU nano 7.2                                                              opciones.sh                                                                       
 #!/bin/bash 
 opcion=0
 menu() {
@@ -20,7 +21,7 @@ echo -e "\e[0;34mque archivo quieres renombrar, con la extension\e[0m"
 read renom
 echo -e "\e[0;34mcual es la extension de tu archivo, con punto\e[0m"
 read extension
-echo -e "\e[0;34mque nombre le quieres poner a tu archivo, sin la extension\e[0>
+echo -e "\e[0;34mque nombre le quieres poner a tu archivo, sin la extension\e[0"
 read nomb
 renom$renom
 extension=$extension
@@ -28,7 +29,7 @@ nomb=$nomb
 if [ -f $renom ]; then
 mv $renom $nomb$extension
 root=$(pwd)/$ubicacion
-echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi>
+echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi y esta ubicado en: $root"
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
 fi
@@ -43,3 +44,4 @@ case $opcion in
 *) echo "opcion invalida" ;;
 esac 
 done
+
