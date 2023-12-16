@@ -1,9 +1,9 @@
-  GNU nano 7.2                                                              opciones.sh                                                                       
 #!/bin/bash 
 opcion=0
 menu() {
-echo "1. eliminar"
-echo "2. renombrar"
+echo -e "\e[0;34m1. eliminar\e[0m"
+echo -e "\e[0;34m2. renombrar\e[0m"
+echo -e "\e[0;34m3. buscar\e[0m"
 }
 eliminar() {
 echo -e "\e[0;34mque archivo quieres eliminar, con la extension\e[0m"
@@ -34,14 +34,25 @@ else
 echo -e "\e[1;31creo que algo falla\e[0m"
 fi
 }
+buscar(){
+echo -e "\e[0;34mque archivo quieres buscar\e[0m"
+read archivo
+archivo=$archivo
+if [ -f $archivo ]; then
+busca=$(pwd)/$archivo
+echo -e "\e[1;31mel archivo $archivo esta en: $busca\e[0m"
+else
+echo -e "\e[1;31creo que algo falla\e[0m" 
+fi
+}
 while true; do
 menu
-echo  "quieres eliminar o renombrar un archivo"
+echo -e "\e[1;31mquieres eliminar o renombrar un archivo\e[0m"
 read opcion
 case $opcion in
 1) eliminar ;;
 2) renombrar ;;
-*) echo "opcion invalida" ;;
+3) buscar ;;
+*) echo -e "\e[0;34mopcion invalida\e[0m" ;;
 esac 
 done
-
