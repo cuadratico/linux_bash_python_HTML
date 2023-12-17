@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "la fecha y la hora son: $(date +"%A, %d/%m/%Y %H:%M:%S")"
+sleep 30
+ poweroff 
