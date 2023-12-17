@@ -1,0 +1,9 @@
+#!/bin/bash 
+echo "de que archivo quieres comprobar su existencia"
+read archivo
+archivo=$archivo
+if test -f $archivo; then 
+echo "este archivo $archivo existe"
+else 
+echo "este archivo $archivo no existe"
+fi
