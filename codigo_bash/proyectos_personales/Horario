@@ -1,0 +1,2 @@
+#!/bin/bash 
+echo "esta es la fecha: $(date, "%d/%m/%a %h:%m:%S")"
