@@ -4,6 +4,7 @@ menu() {
 echo -e "\e[0;34m1. eliminar\e[0m"
 echo -e "\e[0;34m2. renombrar\e[0m"
 echo -e "\e[0;34m3. buscar\e[0m"
+echo -e "\e[0;34m4. existencia_archivo\e[0m"
 }
 eliminar() {
 echo -e "\e[0;34mque archivo quieres eliminar, con la extension\e[0m"
@@ -34,7 +35,7 @@ else
 echo -e "\e[1;31creo que algo falla\e[0m"
 fi
 }
-buscar(){
+buscar() {
 echo -e "\e[0;34mque archivo quieres buscar\e[0m"
 read archivo
 archivo=$archivo
@@ -45,6 +46,16 @@ else
 echo -e "\e[1;31creo que algo falla\e[0m" 
 fi
 }
+existencia_archivo() {
+echo -e "\e[0;34mque archivo quieres comprobar que existe\e[0m"
+read archivo
+archivo=$archivo
+if test -f $archivo; then 
+echo -e "\e[1;31mel archivo $archivo existe\e[0m"
+else 
+echo -e "\e[1;31mel archivo $archivo no existe\e[0m"
+fi
+}
 while true; do
 menu
 echo -e "\e[1;31mquieres eliminar o renombrar un archivo\e[0m"
@@ -53,6 +64,7 @@ case $opcion in
 1) eliminar ;;
 2) renombrar ;;
 3) buscar ;;
+4) existencia_archivo ;;
 *) echo -e "\e[0;34mopcion invalida\e[0m" ;;
-esac 
+esac    
 done
