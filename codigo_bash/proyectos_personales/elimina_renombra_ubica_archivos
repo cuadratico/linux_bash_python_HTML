@@ -13,8 +13,10 @@ archivo=$archivo
 if [ -f $archivo ]; then
 rm $archivo
 echo -e "\e[1;31meste archivo $archivo ya esta eliminado\e[0m"
+exit 1
 else 
 echo -e "\e[1;31creo que algo falla\e[0m"
+exit 1
 fi
 }
 renombrar() {
@@ -31,8 +33,10 @@ if [ -f $renom ]; then
 mv $renom $nomb$extension
 root=$(pwd)/$ubicacion
 echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi y esta ubicado en: $root"
+exit 1
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
+exit 1
 fi
 }
 buscar() {
@@ -42,8 +46,10 @@ archivo=$archivo
 if [ -f $archivo ]; then
 busca=$(pwd)/$archivo
 echo -e "\e[1;31mel archivo $archivo esta en: $busca\e[0m"
+exit 1
 else
 echo -e "\e[1;31creo que algo falla\e[0m" 
+exit 1 
 fi
 }
 existencia_archivo() {
@@ -52,8 +58,10 @@ read archivo
 archivo=$archivo
 if test -f $archivo; then 
 echo -e "\e[1;31mel archivo $archivo existe\e[0m"
+exit 1 
 else 
 echo -e "\e[1;31mel archivo $archivo no existe\e[0m"
+exit 1 
 fi
 }
 while true; do
@@ -65,6 +73,7 @@ case $opcion in
 2) renombrar ;;
 3) buscar ;;
 4) existencia_archivo ;;
-*) echo -e "\e[1;33mopcion invalida\e[0m" ;;
+*) echo -e "\e[1;33mopcion invalida\e[0m"
+exit 1  ;;
 esac    
 done
