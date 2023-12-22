@@ -1,0 +1,5 @@
+#!/bin/bash 
+echo "de que web quieres hacer un ping"
+read ping
+ping=$ping
+ping $ping || echo "la web no existe"
