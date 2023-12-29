@@ -2,5 +2,6 @@
 echo "que archivo quieres buscar"
 read archivo
 archivo=$archivo
-busca=$(pwd)/$archivo
-echo "el archivo $archivo esta ubicado en: $busca"
+root=$(find / -name $archivo)
+echo "tu archivo esta en: $root"
+exit 1
