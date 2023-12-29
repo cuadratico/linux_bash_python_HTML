@@ -1,0 +1,41 @@
+#!/bin/bash 
+opcion=0
+menu(){
+echo "1. si"
+echo "2. no"
+echo "3. quiero_descifrar_el_texto"
+}
+si(){
+echo "dime lo que pone en el archivo cifrado"
+echo "cual es tu nombre"
+read nomb
+nomb=$nomb
+echo "$nomb voy a crear el archivo"
+touch archivo.sh 
+gpg -c -r Este es el contenido de este archivo cifrado  archivo.sh
+sleep 2
+echo "busca el archivo"
+}
+no(){
+echo "el script se esta cerrando"
+sleep 2
+exit 1
+}
+quiero_descifrar_el_texto(){
+echo "tu archivo estara descifrado en 2 segundos"
+sleep 2
+gpg -d archivo.sh.gpg
+exit 1
+}
+while true; do 
+menu 
+echo "que opcion quieres elegir"
+read opcion
+opcion=$opcion
+case $opcion in 
+1) si ;;
+2) no ;;
+3) quiero_descifrar_el_texto ;;
+*) echo "esta opcion no es valida" ;;
+esac 
+done
