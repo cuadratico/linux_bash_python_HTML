@@ -31,8 +31,8 @@ extension=$extension
 nomb=$nomb
 if [ -f $renom ]; then
 mv $renom $nomb$extension
-root=$(pwd)/$ubicacion
-echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi y esta ubicado en: $root"
+root=$(find/ -name $ubicacion)
+echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi>
 exit 1
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
@@ -43,14 +43,9 @@ buscar() {
 echo -e "\e[1;33mque archivo quieres buscar\e[0m"
 read archivo
 archivo=$archivo
-if [ -f $archivo ]; then
-busca=$(pwd)/$archivo
+busca=$(find / -name $archivo)
 echo -e "\e[1;31mel archivo $archivo esta en: $busca\e[0m"
 exit 1
-else
-echo -e "\e[1;31creo que algo falla\e[0m" 
-exit 1 
-fi
 }
 existencia_archivo() {
 echo -e "\e[1;33mque archivo quieres comprobar que existe\e[0m"
