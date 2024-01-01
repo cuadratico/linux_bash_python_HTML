@@ -1,0 +1,12 @@
+#!/bin/bash 
+while true; do
+echo "que se utiliza en bash para eliminar archivos"
+read var
+var=$var
+if [[ "$var" == "rm" ]]; then
+echo "genial has adivinado la pregunta"
+break
+else 
+echo "error"
+fi 
+done
