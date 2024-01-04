@@ -1,0 +1,15 @@
+#!/bin/bash
+ echo "ingresa un numero" 
+read numero
+numero=$numero
+
+case $numero in
+1|2|3|4|5)
+
+echo "bien"
+;;
+*)
+
+echo "mal"
+;;
+esac 
