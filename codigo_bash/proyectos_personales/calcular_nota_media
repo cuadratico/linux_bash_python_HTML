@@ -1,0 +1,26 @@
+#!/bin/bash 
+echo "voy a calcular tu nota media"
+sleep 1
+if command -v bc &> /dev/null; then 
+echo "continuamos"
+else 
+echo "un momento"
+sudo apt-get update /dev/null && sudo apt-get install bc -y > /dev/null && echo "todo listo"
+fi
+echo "escribe tus cutro ultimos resultados"
+read resul1
+read resul2
+read resul3 
+read resul4
+resul1=$resul1
+resul2=$resul2
+resul3=$resul3
+resul4=$resul4
+numeros=($resul1 $resul2 $resul3 $resul4)
+sum=0
+for num in "${numeros[@]}"; do 
+suma=$(($sum + $num))
+done 
+cantidad=${numeros[@]}
+media=$(echo "scale=2; $suma / $cantidad" | bc)
+echo "esta es tu media: $media"
