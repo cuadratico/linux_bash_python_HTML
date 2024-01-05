@@ -32,7 +32,7 @@ nomb=$nomb
 if [ -f $renom ]; then
 mv $renom $nomb$extension
 root=$(find/ -name $ubicacion)
-echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi>
+echo -e "\e[1;31mel nombre de este archivo $renom se a cambiado a $nomb$extensi"
 exit 1
 else
 echo -e "\e[1;31creo que algo falla\e[0m"
