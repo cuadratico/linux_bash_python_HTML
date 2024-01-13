@@ -1,0 +1,9 @@
+#!/bin/bash 
+echo "de que numero quieres hacer una raiz cuadrada"
+read num
+num=$num
+while [ $num -gt 1 ]; do 
+rac=$( scale=2 bc <<< "sqrt($num)")
+echo "la raiz cuadrada de $num es $rac"
+num=$rac
+done
