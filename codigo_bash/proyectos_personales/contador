@@ -1,0 +1,6 @@
+#!/bin/bash 
+echo "escribe una palabra"
+read palabra
+palabra=$palabra
+letras=$(wc -m <<< "$palabra")
+echo "tu palabra tiene $letras caracteres"
