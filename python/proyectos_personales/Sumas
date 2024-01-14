@@ -1,0 +1,4 @@
+variable1 = 4
+variable2 = 4
+variable3 = variable1 + variable2
+print (f"La suma de {variable1} mas {variable2} mas 2 es", variable3 + 2)
