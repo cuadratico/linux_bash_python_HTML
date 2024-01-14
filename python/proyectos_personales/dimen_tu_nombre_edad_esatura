@@ -1,0 +1,4 @@
+nombre = input("dime tu nombre: ")
+edad = int(input ("dime tu edad: "))
+estatura = float(input("dime tu estatura: "))
+print (f"tu nombre es {nombre}, tu edad es {edad}, tu estatura es {estatura}")
