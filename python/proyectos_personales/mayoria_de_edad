@@ -1,0 +1,11 @@
+nombre=input("Hola,¿Como te llamas?\n")
+print(f"Hola,{nombre},encantado de conocerte.")
+a=int(input("¿Cuantos años tienes?\n"))
+if a == 18:
+    print(f"{nombre}, acabas de obtener la mayoría de edad")
+if a > 18:
+    diferencia = a - 18
+    print(f"{nombre} hace, {diferencia}, años que cumpliste la mayoría de edad.")
+if a < 18:
+    menor = 18 -a 
+    print(f"{nombre} te faltan, {menor}, años para culplir la mayoria de edad") 
