@@ -1,5 +1,5 @@
 import qrcode 
-nomb = input("que nombre de quieres poner al archivo: ")
-code = input("que link quieres convertir a QR:")
+nomb = input("que nombre de quieres poner al archivo\n")
+code = input("que link quieres convertir a QR\n")
 png = qrcode.make(f"{code}")
 png.save(f"{nomb}.png")
