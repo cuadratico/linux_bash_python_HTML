@@ -1,0 +1,14 @@
+instalar ffmpeg, para windows: choco install ffmpeg
+import pytube
+import whisper
+video_youtube = input("que link quieres transcribir\n")
+archivo = input("que nombre quieres que tenga el archivo\n")
+modelo = whisper.load_model('small')
+
+youtube_video = pytube.YouTube(video_youtube)
+audio = youtube_video.streams.get_audio_only()
+audio.dowload(archivo='tmp.mp4')
+
+resultado = modelo.trascribe('tmp.mp4')
+
+print(resultado)
