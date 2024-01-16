@@ -1,5 +1,16 @@
-import qrcode 
-nomb = input("que nombre de quieres poner al archivo\n")
-code = input("que link quieres convertir a QR\n")
-png = qrcode.make(f"{code}")
-png.save(f"{nomb}.png")
+import qrcode
+link = input("que link quieres transformar en QR\n")
+archivo = input("que nombre le quieres poner al archivo\n")
+color_qr = input("que color le quieres poner al QR(en ingles y minuscular)\n")
+color_exteriro = input("que color lequieres poner al interior del QR(en ingles y minuscular)\n")
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+     box_size=10,
+    border=4,
+)
+qr.add_data(f"{link}")
+qr.make(fit=True)
+
+img = qr.make_image(fill_color=(color_qr), back_color=(color_exteriro))
+img.save(f"{archivo}.png")
