@@ -1,0 +1,9 @@
+pregunta = int(input("quieres cifrar una letra(1) o quieres saber que letra es un numero(2)\n"))
+letra = (input("que letra quieres cifrar\n"))
+numero =  int(input("de que numero quieres saber la letra"))
+if pregunta == 1:
+ asc = ord(letra)
+ print(f"la letra z es {asc}")
+elif pregunta == 2:
+ asd = chr(numero)
+print(f"el numero es {asd}")
