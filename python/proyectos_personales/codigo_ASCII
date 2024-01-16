@@ -1,9 +1,16 @@
-pregunta = int(input("quieres cifrar una letra(1) o quieres saber que letra es un numero(2)\n"))
-letra = (input("que letra quieres cifrar\n"))
-numero =  int(input("de que numero quieres saber la letra"))
-if pregunta == 1:
- asc = ord(letra)
- print(f"la letra z es {asc}")
-elif pregunta == 2:
- asd = chr(numero)
-print(f"el numero es {asd}")
+opciones = int(input("que quieres hacer: cifrar una letra(1), descifrar un numero(2)"))
+while True:
+    opciones != 1 and opciones != 2
+    pciones = int(input("que uiqres hacer: cifrar una letra(1), descifarr un numero(2)"))
+    continue 
+
+if opciones == 1:
+    letra = input("que letra quires cifrar")
+    asd = ord(letra)
+    print(f"{letra} corresponde a {asd}")
+    break
+elif opciones == 2:
+    numero = int(input("que numero quieres descifrar\n"))
+    ads = chr(numero)
+    print(ads)
+    break
