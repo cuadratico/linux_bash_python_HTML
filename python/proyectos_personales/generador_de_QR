@@ -1,4 +1,4 @@
-#Autor: Tirso Zaforas Vilchez
+)#Autor: Tirso Zaforas Vilchez
 import qrcode
 from translate import Translator
 import pytest
@@ -8,13 +8,13 @@ archivo = input("que nombre le quieres poner al archivo\n")
 traduccion = Translator(
     from_lang="spanish",
      to_lang="english")
-color_qr = input("que color le quieres poner al QR(en ingles y minuscular)\n")
+color_qr = input("que color le quieres poner al QR\n")
 reasultado = traduccion.translate(color_qr)
 
 traduccion1 = Translator(
     from_lang="spanish",
      to_lang="english")
-color_exteriro = input("que color le quieres poner al interior del QR(en ingles y minuscular)\n")
+color_exteriro = input("que color le quieres poner al interior del QR\n")
 reasultado1 = traduccion1.translate(color_exteriro)
 
 tamaño_de_qr = int(input("de que tamaño quieres que sea el QR\n"))
