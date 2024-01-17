@@ -1,3 +1,4 @@
+#Autor: Tirso Zaforas Vilchez
 import qrcode
 from translate import Translator
 import pytest
