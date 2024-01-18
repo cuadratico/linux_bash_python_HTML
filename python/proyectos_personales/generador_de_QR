@@ -1,4 +1,4 @@
-)#Autor: Tirso Zaforas Vilchez
+#Autor: Tirso Zaforas Vilchez
 import qrcode
 from translate import Translator
 import pytest
@@ -16,6 +16,8 @@ traduccion1 = Translator(
      to_lang="english")
 color_exteriro = input("que color le quieres poner al interior del QR\n")
 reasultado1 = traduccion1.translate(color_exteriro)
+if reasultado == reasultado1:
+    print("los dos colores son iguales y el QR no se podra percibir bien te recomiendo cambiarlos")
 
 tamaño_de_qr = int(input("de que tamaño quieres que sea el QR\n"))
 tamaño_de_borde = int(input("de que tamaño quieres que sean los bordes\n"))
