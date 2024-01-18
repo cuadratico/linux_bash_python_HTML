@@ -1,16 +1,10 @@
-opciones = int(input("que quieres hacer: cifrar una letra(1), descifrar un numero(2)"))
-while True:
-    opciones != 1 and opciones != 2
-    pciones = int(input("que uiqres hacer: cifrar una letra(1), descifarr un numero(2)"))
-    continue 
+opciones = int(input("que quieres hacer: cifrar una letra(1), descifrar un numero(2)\n"))
 
 if opciones == 1:
-    letra = input("que letra quires cifrar")
+    letra = input("que letra quires cifrar\n")
     asd = ord(letra)
     print(f"{letra} corresponde a {asd}")
-    break
 elif opciones == 2:
     numero = int(input("que numero quieres descifrar\n"))
     ads = chr(numero)
     print(ads)
-    break
