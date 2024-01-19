@@ -1,0 +1,2 @@
+palabra = input("dime una palabra\n")
+print(len(palabra))
