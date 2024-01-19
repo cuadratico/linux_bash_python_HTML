@@ -1,0 +1,8 @@
+def digitos (d):
+  c = 0
+  while d > 0:
+    c += 1
+    d = d // 10
+  return c
+numero = int(input("pon un numero\n"))
+print(f"{numero} tiene {digitos(numero)} cifras")
