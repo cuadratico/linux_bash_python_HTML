@@ -1,0 +1,13 @@
+contraseña = "Falcon_p"
+R1 = input("primera letra del juego para ps4 que en su nombre lleva new vegas(en mayuscula)\n")
+R2 = input("primera letra del nombre del fisico creador de la teoria de la relatividad\n")
+R3 = input("primera letra de la funcion de python que se utiliza para contar la cantidad de bytes en una palabra\n")
+R4 = input("lenguaje matriz de programacion que acaba por ++\n")
+R5 = input("primera letra de una criptografia que oculta un texto sin generar una clave\n")
+R6 = input("primera letra del nombre del hombre que descubrio la gravedad\n")
+R7 = input("simbolo del teclado que puede ser o una barra o una barra b___\n")
+R8 = input("la primera letra de un script que puede controlar tu telefono\n")
+if contraseña == R1+R2+R3+R4+R5+R6+R7+R8:
+        print("la contraseña es correcta")
+else:
+        print("la contraseña es incorrecta")
