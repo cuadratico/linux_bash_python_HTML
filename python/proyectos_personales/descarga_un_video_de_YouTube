@@ -1,0 +1,14 @@
+from pytube import YouTube
+ 
+def Download(link):
+  yt = YouTube(link)
+  yt = yt.streams.get_highest_resolution()
+  try:
+    yt.download()
+  except:
+    print("Hubo un error")
+  print("Descarga completada con éxito")
+   
+link = input("Pega tu link de youtube\n ")
+ 
+Download(link)
