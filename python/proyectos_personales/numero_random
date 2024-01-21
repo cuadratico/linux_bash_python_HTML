@@ -1,0 +1,4 @@
+import random 
+lista = [1,2,3,4,5,6]
+resultado = random.choice(lista)
+print(resultado)
