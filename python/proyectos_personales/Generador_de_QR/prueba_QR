@@ -1,0 +1,51 @@
+#Autor: Tirso Zaforas Vilchez
+import qrcode
+from translate import Translator
+import pytest
+link = input("que link quieres transformar en QR\n")
+archivo = input("que nombre le quieres poner al archivo\n")
+
+traduccion = Translator(
+    from_lang="spanish",
+     to_lang="english")
+color_qr = input("que color le quieres poner al QR\n")
+reasultado = traduccion.translate(color_qr)
+
+traduccion1 = Translator(
+    from_lang="spanish",
+     to_lang="english")
+color_exteriro = input("que color le quieres poner al interior del QR\n")
+reasultado1 = traduccion1.translate(color_exteriro)
+
+if reasultado == reasultado1:
+    pregunta = int(input("\033[1;33m"+"los dos colores son iguales y el QR no se podra percibir bien te recomiendo cambiarlos, quires cambiarlos si (1) o no(2)\n"+'\033[0;m')) 
+if pregunta == 1:
+ traduccion = Translator (
+    from_lang="spanish",
+     to_lang="english")
+color_qr = input("que color le quieres poner al QR\n")
+reasultado = traduccion.translate(color_qr)
+
+traduccion1 = Translator(
+    from_lang="spanish",
+     to_lang="english")
+color_exteriro = input("que color le quieres poner al interior del QR\n")
+reasultado1 = traduccion1.translate(color_exteriro)
+
+if pregunta == 2:
+   print("continuemos")
+
+tamaño_de_qr = int(input("de que tamaño quieres que sea el QR\n"))
+tamaño_de_borde = int(input("de que tamaño quieres que sean los bordes\n"))
+
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+     box_size=tamaño_de_qr,
+    border=tamaño_de_borde,
+)
+qr.add_data(f"{link}")
+qr.make(fit=True)
+
+img = qr.make_image(fill_color=(reasultado), back_color=(reasultado1))
+img.save(f"{archivo}.png")
