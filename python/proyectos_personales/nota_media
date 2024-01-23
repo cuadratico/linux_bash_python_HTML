@@ -1,0 +1,14 @@
+pregunta = input("quieres redondear el numero si(1) o no(2)\n")
+nota1 = int(input("dime tu primera nota\n"))
+nota2 = int(input("dime tu segunda nota\n"))
+nota3 = int(input("dime tu tercera nota\n"))
+nota4 = int(input("dime tu cuarta nota\n"))
+if pregunta == 1:
+  suma = nota1 + nota2 + nota3 + nota4
+division = suma / 4
+print(f"tu nota media es: {division}") 
+
+if pregunta == 2:
+  sumas =  nota1 + nota2 + nota3 + nota4
+divisiones = sumas // 4
+print(f"tu nota es: {divisiones}")
