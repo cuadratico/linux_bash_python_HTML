@@ -1,0 +1,8 @@
+#instalar flash
+import pywhatkit
+numero = input("dime un numero\n")
+mensaje = input("dime un mensaje\n")
+hora = int(input("dime a que hora quieres enviar el mensaje\n"))
+minuto = int(input("dime a que minuto qiueres enviar el mensaje\n"))
+
+pywhatkit.sendwhatmsg(numero, mensaje, hora, minuto)
