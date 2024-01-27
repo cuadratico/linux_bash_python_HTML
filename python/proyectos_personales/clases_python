@@ -1,0 +1,86 @@
+print(10 % 2)
+print( "hola" + str(5))
+print( "hola" + "5")
+print("hola" * 5)
+#strings 
+letras = "Hola" 
+print( len(letras))  #Numero de letras 
+
+string = "\testo es un salto de linea\n y otra linea con una tabulacion\t tabulacion"
+caso = "\\Hola"
+print(string)
+
+nombre, apellido, edad = "Tirso",  "Zaforas Vilchez", 14
+
+print(f"mi nombre es {nombre}, mi apellido es {apellido} y mi edad es {edad}")
+
+print( "mi nombre es {}, mi apellido es {} y mi edad es {}".format(nombre, apellido, edad))
+
+lengua = "Hola"
+a, b, c, d = lengua
+print(a)
+print(b)
+print(c)
+print(d)
+
+numero = "123"
+print(len(numero))
+
+#division de str 
+
+varibale = lengua[1:3]
+print(varibale)
+
+#reverse 
+
+variab = lengua[::-1]
+print(variab)
+
+
+#mi eleccion
+print(lengua.capitalize())#Primera letra mayuscula  
+print(lengua.upper())#Toda la palabra mayuscula
+print(lengua.count("o"))#Que numero es la letra
+print(lengua.isnumeric())#Si es un numero 
+print(lengua.lower())#Toda la palabra en minuscula 
+print(lengua.upper().isupper())#concatenar
+print(lengua.startswith("H"))#Para saber si empieza o no con la letra que le entregamos
+
+#sets#Un set no es una estrucutura ordenada
+My_sets = {"Tirso", "Zaforas Vilchez", 14}
+my_other_set = {}#llaves para deccionarios y sets 
+
+sets = {"Tirso", "Zaforas Vilchez", 14}
+print(type(sets))
+print(sets)
+print(len(sets))#mideo la longitud#Cuantos elementos tiene la variable sets
+#elementos de sets
+sets.add("añadido")# añadir un elemento
+print(sets)
+sets.remove("añadido")
+print("añadido" in sets)#comprobar que un elemento existe dentro de un set
+print(sets)
+sets.clear()#Elimina todos los elementos de un set
+#de set a lista
+setes = {"Tirso", "Zaforas Vilchez", 14}
+lista = list(setes)
+print(len(lista))
+
+#uniones 
+sets = {"Tirso", "Hola", "Zaforas Vilchez"}
+setss = {"Zaforas Vilchez", "Tirso"}
+print(sets.union(setss).union({14}))
+#Diferencia 
+print(sets.difference(setss))
+del sets#elimina la varibale del codigo
+#no hay control sobre los elementos#Un set no admite repetidos 
+
+#diccionario(explicacion)
+diciconario = {
+    "leche": 2,
+    "carne": 3, 
+    "agua": 1
+}
+print(diciconario)
+#no adverso
+print("{'Zaforas Vilchez', 'Tirso', 14}")
