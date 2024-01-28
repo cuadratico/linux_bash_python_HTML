@@ -1,0 +1,3 @@
+numero = int(input("dime un numero\n"))
+
+print(f"El numero {numero} es en binario:", bin(numero))
