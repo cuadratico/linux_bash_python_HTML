@@ -104,7 +104,7 @@ print(tuple(dic))
 print("{'Zaforas Vilchez', 'Tirso', 14}")
 
 #condicionales 
-numero = int(input("dime un numero\n"))
+numero = 12
 
 if numero > 100 and numero < 200:
     print("el numero esta entre 100 y 200")
@@ -115,3 +115,58 @@ else:
 
 #Loops o bucles 
 #While 
+
+
+condicion = 0 
+while condicion < 10:
+  condicion += 1#suma la varible condicion 1 por cada vuelta 
+  print(f"esta siguiendo la condicion: {condicion}")
+  if condicion == 5:
+    print("la condicion es 5")
+    break
+else:
+    print("deja de seguir la condicion")#Tambien se le puede añadir if y elif. Deja de cumplir la condicion cunado el numero es  mayor a 10
+
+#for 
+    diciconario = {
+        "Google":"Alphabet",
+        "Windows":"MIcorosft"
+    }
+    for i in diciconario:
+      print(f"el valor en esta vuelta es de: {i}")#darle un valor de la lista a este print por cada vuelta 
+    if i == "Microsoft":
+      print("estas eligiendo a Microosft")#continue#continua volviendo ha hacer el for #tambien podemos utilizar break
+#Tambien se puede utilizar elif y else 
+
+#Funciones 
+def funcion():
+ print("Hola")
+funcion()#llamo a la funcion
+
+def suma (primer_numero, segundo_numero):
+    print(primer_numero + segundo_numero)
+    sumar(2, 8)
+    sumar(2, 6)
+    sumar("2", "5")
+
+#recibir parametros con funciones 
+def funcion(numero, numeros): 
+ return numero + numeros
+ varibale = funcion(1,2)
+ print(varibale)
+ #reeordenar parametros de una funcion
+def name (nombre, apellido):
+    print(f"{nombre} {apellido}")
+
+    name( apellido = "Zaforas", nombre = "Tirso")
+
+    #valor por defecto
+    def namee (nombre, apellido, alias = "otro"):
+     print(f"{nombre} {apellido} {alias}")
+    namee( "Tirso", "Zaforas", "cuadratico")
+
+#numero de parametros dinamico
+    def texto(*text):
+     for texts in texto:
+        print(texts.upper())
+     texto("Hola")
