@@ -76,11 +76,42 @@ del sets#elimina la varibale del codigo
 #no hay control sobre los elementos#Un set no admite repetidos 
 
 #diccionario(explicacion)
-diciconario = {
-    "leche": 2,
-    "carne": 3, 
-    "agua": 1
+dic = {
+    "Google":"Alphabet",
+    "Windows":"Microsoft",
+    "Macos":"Apple"
 }
-print(diciconario)
+print(type(dic))
+print(len(dic))#Ver la cantidada de elemtos que tiene un diccionario
+print(dic["Windows"])#buscar un elemto en el diccionario
+dic["Windows"]= "Hola"#modificar o añadir elementos al diccionario
+print(dic["Windows"])
+print(dic)
+del dic["Windows"]#Eliminar elementos 
+print(dic)
+print("Windows" in dic)#Para saber si el elemento Windows esta en el dicionario
+print("Google" in dic)
+print(dic.items())#Te dice los items que hay en el diccionario
+print(dic.keys())#te dice las llaves que hay en el diccionario
+print(dic.values())#Te dice los valores que hay en el diccionario
+print(dic.fromkeys(("Google", "MIcrosoft")))#Crear un diccionario sin valores 
+print(dic)
+print(dic.fromkeys(dic, "Hola"))#Que todas las llaves de dic almacenen Hola 
+print(list(dic))#Lo transformo en una lista y me da unicamente las claves 
+print(set(dic))
+print(tuple(dic))
 #no adverso
 print("{'Zaforas Vilchez', 'Tirso', 14}")
+
+#condicionales 
+numero = int(input("dime un numero\n"))
+
+if numero > 100 and numero < 200:
+    print("el numero esta entre 100 y 200")
+elif numero < 100 and numero > 0:
+        print("el numero esta entre 0 y 100")
+else:
+            print("el numero es mayor que 200")
+
+#Loops o bucles 
+#While 
