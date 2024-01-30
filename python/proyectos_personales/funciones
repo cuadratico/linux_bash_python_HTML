@@ -1,0 +1,4 @@
+def funcion(numero, numero1):
+    print(numero + numero1)
+funcion(2, 2)
+funcion(3, 6)
