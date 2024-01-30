@@ -1,0 +1,10 @@
+import math 
+a = int(input("Dime el cateto 1\n"))
+b = int(input("Dime el cateto 2\n"))
+
+cala = a **2
+calb = b **2 
+cacb = cala + calb
+c = math.sqrt(cacb)
+inteller = int(c)
+print(inteller)
