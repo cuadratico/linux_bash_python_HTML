@@ -16,4 +16,4 @@ try:
  else:
     print(f"No has acertado, el numero era {randomes}")
 except:
- Traceback:print("Error")
+ Traceback:print("Error, el valor no es numero")
