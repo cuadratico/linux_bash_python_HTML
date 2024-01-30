@@ -7,9 +7,14 @@ if randomes >= 5:
 if randomes < 5:
     print("El numero es menor que cinco")
 
-pregunta = int(input("Dime un numero\n"))
+pregunta = input("Dime un numero\n")
 
-if pregunta == randomes:
+if pregunta.isnumeric() == False:
+   print("\033[1;33m"+"Tu respuesta no es un numero"+'\033[0;m')
+
+numero = int(pregunta)
+
+if numero == randomes:
     print(f"Has acertado el numero {randomes}")
 else:
     print(f"No has acertado, el numero era {randomes}")
