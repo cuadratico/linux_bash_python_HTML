@@ -1,0 +1,4 @@
+import  webbrowser
+webbrowser.open(
+    "https://github.com/cuadratico/linux_bash_python"
+)
