@@ -1,19 +1,22 @@
 import random
-print("Intenta adivinar el numero\n")
-lista = [1,2,3,4,5,6,7,8,9,10]
-randomes = random.choice(lista)
-if randomes >= 5:
-    print("El numero es mayor o igual que cinco")
-if randomes < 5:
-    print("El numero es menor que cinco")
+randones = random.randint(1, 10)
+if randones <= 5:
+ print("El numero es igual o menor que 5")
+else:
+ print("el numero es mayor que 5")
 
-pregunta = input("Dime un numero\n")
 
-try:
- numero = int(pregunta)
- if numero == randomes:
-    print(f"Has acertado el numero {randomes}")
- else:
-    print(f"No has acertado, el numero era {randomes}")
-except:
- Traceback:print("Error, el valor no es numero")
+pregunta = int(input("Dime un numero\n"))
+if not randones == pregunta:
+        print("NO has acertado")
+if randones == pregunta:
+    print("has acertado")
+
+
+
+while not randones == pregunta:
+ pregunta = int(input("Dime un numero\n"))
+ if randones == pregunta:
+    print("has acertado")
+ if not randones == pregunta:
+        print("NO has acertado")
