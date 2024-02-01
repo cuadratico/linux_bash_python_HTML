@@ -1,0 +1,23 @@
+import random
+pregunta = int(input("Cuantos caracteres quieres que tenga tu contraseña: de 4 a 6\n"))
+
+if pregunta == 4:
+ lista4 = ["z6T8u", "432r", "#f5g", "mN78", "*9kL", "$e3H", "&Y6j", "%U4b", "(R2w", "^Q1x"]
+ contraseña4 = random.choice(lista4)
+ print(contraseña4)
+if pregunta == 5:
+ lista5 = ["456tG#", "h873m", "#873jK", "s4F34$", "%56789", "*ghj5$", "34567t", "#d5f4g", "7890jk", "$%^&*("]
+ contraseña5 = random.choice(lista5) 
+ print(contraseña5)
+if pregunta == 6:
+ lista6 = ["567tG#", "h873m", "#873jK", "s4F34$", "%56789", "hj5$", "34567t", "#d5f4g", "7890jk", "$%^&*("]
+ contrseña6 = random.choice(lista6)
+ print(contrseña6)
+if pregunta == 7:
+ lista7 = ["#456tG", "h873m", "#873jK", "s4F34$", "%56789", "%thj5$", "34567t", "#d5f4g", "7890jk", "$%^&*("]
+ contrseña7 = random.choice(lista7)
+ print(contrseña7)
+if pregunta == 8:
+ lista8 = ["s4F34$", "%56789", "#d5f4g", "7890jk", "$%^&*(", "%T53sF", "&^7*jK", "890#gH", "8,3=3m", "w_?@~$"]
+ contrseña8 = random.choice(lista8)
+ print(contrseña8)
