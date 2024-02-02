@@ -1,0 +1,33 @@
+import random 
+randone = random.randint(1, 10)
+numero = int(input("Dime un numero\n"))
+if numero == randone:
+    print("Has acertado")
+elif numero < randone:
+    print("Un poco mas")
+else:
+    print("un poco menos")
+intentos = 0
+
+def funcion(numero, randone, intentos):
+ while numero != randone and intentos <4:
+  numero = int(input("Dime un numero\n"))
+ if numero == randone:
+    print("Has acertado")
+ elif numero < randone:
+    print("Un poco mas")
+ elif numero > randone:
+    print("un poco menos")
+ intentos += 1
+ if intentos == 3:
+   print("has perdido tus intentos")
+   
+while True:
+   
+   pregunta = input("Quieres seguir (S/N)")
+   if pregunta.lower() == "s":
+     print("perfecto")
+     funcion(numero, randone, intentos)
+     continue
+   else:
+    break
