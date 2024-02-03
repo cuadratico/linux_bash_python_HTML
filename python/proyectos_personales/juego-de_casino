@@ -1,0 +1,24 @@
+import random
+randone = random.randint(1, 100)
+dinero = int(input("cuanto dinero quieres meter\n"))
+if  randone >= 50:
+    v1 = dinero * 2
+    print(f"Has ganado: {v1}")
+if randone < 49:
+    porcentaje = dinero * 10 / 100
+    resta = dinero - porcentaje
+    print(f"has perdido: {resta}")
+    print(f"Te quedan {porcentaje}")
+while dinero >= 100:
+ randone = random.randint(1, 100)
+ dinero = int(input("cuanto dinero quieres meter\n"))
+ if  randone >= 50:
+    v1 = dinero * 2
+    print(f"Has ganado: {v1}")
+    continue
+ if randone < 49:
+    porcentaje = dinero * 10 / 100
+    resta = dinero - porcentaje
+    print(f"has perdido: {resta}")
+    print(f"Te quedan {porcentaje}")
+    continue
