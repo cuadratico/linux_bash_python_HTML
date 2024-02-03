@@ -1,0 +1,12 @@
+import hashlib 
+
+palabra = input("Dime una plaabra\n")
+palabra_bytes = palabra.encode("utf-8")
+
+hash_objeto = hashlib.sha256()
+hash_objeto.update(palabra_bytes)
+
+hash_hexadecimal = hash_objeto.hexdigest()
+
+print(hash_hexadecimal)
+print(palabra_bytes)
