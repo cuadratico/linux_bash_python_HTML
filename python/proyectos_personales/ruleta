@@ -1,0 +1,34 @@
+import random
+print("Tragamonedas_Cassino\n")
+dinero = int(input("Cuanto dinero quieres apostar\n"))
+lista = ["🍎", "🍒", "🍌", "🏺"]
+posicion_ganadora = "🍎" "🍒" "🍌"
+def funcion():
+   return[random.choice(lista)for i in  range(3)]
+resultado = funcion()
+print(funcion())
+
+if resultado == posicion_ganadora:
+   v1 = dinero * 2
+   print(f"Has ganado: {v1}")
+elif "🏺" in lista:
+   p1 = dinero * 10 / 100
+   print(f"tenias: {dinero}\n"
+         f"Ahora tienes: {p1}")
+else:
+   print("Has perdido todo")
+while dinero >10:
+  dinero = int(input("Cuanto dinero quieres apostar\n"))
+  resultado = funcion()
+  print(funcion())
+
+  if resultado == posicion_ganadora:
+   v1 = dinero *2
+   print(f"Has ganado: {v1}")
+  if "🏺" in lista:
+   p1 = dinero * 5
+   print(f"Ahora tienes {p1}")
+  else:
+   p1 = dinero * 10 / 100
+   print(f"tenias: {dinero}\n"
+         f"Ahora tienes: {p1}")
