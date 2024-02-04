@@ -1,0 +1,57 @@
+Gryffindor = 0
+Ravenclaw = 0
+Hufflepuff = 0
+Slythering = 0 
+p1 = int(input("P1) ¿Te gusta el amanecer o el anochecer?\n"
+       "1) amanecer\n"
+       "2) Anochecer\n"))
+if p1 == 1:
+ Ravenclaw += 1
+ Gryffindor += 1
+elif p1 == 2:
+ Hufflepuff += 1
+ Slythering += 1
+else:
+ print("Error")
+
+
+p2 = int(input("P2) Cuando esté muerto, quiero que la gente me recuerde como:\n"
+     "1) El Bien\n"
+     "2) El Grande\n"
+     "3) Los sabios\n"
+     "4) El audaz\n"))
+if p2 == 1:
+ Hufflepuff += 2
+elif p2 == 2:
+ Slythering += 2
+elif p2 == 3:
+ Ravenclaw += 3
+elif p2 == 4:
+ Gryffindor += 2
+else:
+ print("Error")
+
+
+p3 = int(input("P3) ¿Qué tipo de instrumento le agrada más al oído?\n"
+     "1) el violín\n"
+     "2) la trompeta\n"
+     "3) el piano\n"
+     "4) El tambor\n"))
+if p3 == 1:
+ Slythering += 4
+elif p3 == 2:
+ Hufflepuff += 4
+elif p3 == 3:
+ Ravenclaw += 4
+elif p3 == 4:
+ Gryffindor += 4
+else:
+ print("Error")
+
+diccionario = {Gryffindor:"Gryffindor",
+        Ravenclaw:"Ravenclaw", 
+        Hufflepuff: "Huffelpuf", 
+        Slythering: "Slithering"}
+valor = max(diccionario.values())
+print(diccionario)
+print(f"Tu casa es: {valor} ")
