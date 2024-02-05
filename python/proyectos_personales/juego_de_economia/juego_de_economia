@@ -1,0 +1,31 @@
+print("Tu propia empresa\n")
+
+nombre_empresa = input("Cual es el nombre de tu empresa\n")
+nombre_CEO = input("Cual es tu nombre\n")
+dinero_inicial = int(input("Dime con cuanto dinero quieres empezar 100.000/1.000.000/10.000.000\n"))
+dia = 0
+
+while not dinero_inicial < 10000: 
+  print(nombre_empresa)
+  print(nombre_CEO)
+  print(dinero_inicial)
+  dia += 1
+  print(dia)
+
+  def bienes_raizes():
+    global dinero_inicial
+    casas = {
+        "1:Edificio_Atlantis":"valor:100.000:coste:10.000/mes:ganancias:35.000/mes",
+        "2:Edificio_cosco":"valor:45.000:coste:5.600/mes:ganacias:12.000/mes"
+    }
+    print(casas)
+    pregunta = int(input("Que numero de edificio quieres comprar\n"))
+    if pregunta == 1:
+      resta = dinero_inicial - 100000
+      dinero_inicial = resta
+      print(f"Te has gastado 100.000$ por lo que te quedan: {dinero_inicial}")
+    if pregunta == 2:
+      resta2 = dinero_inicial - 45000
+      dinero_inicial = resta2
+      print(f"Te has gastado 45.000$ por lo que te quedan: {dinero_inicial}")
+  bienes_raizes()
