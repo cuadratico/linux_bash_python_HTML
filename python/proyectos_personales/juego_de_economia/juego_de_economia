@@ -5,7 +5,7 @@ nombre_empresa = input("Cual es el nombre de tu empresa\n")
 nombre_CEO = input("Cual es tu nombre\n")
 dinero_inicial = int(input("Dime con cuanto dinero quieres empezar 100.000/1.000.000/10.000.000\n"))
 dia = 0
-numero_de_casa = 0
+numero_de_casa = ""
 while not dinero_inicial < 10000: 
   print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa}\033[0m")
   print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO}\033[0m")
@@ -25,15 +25,15 @@ while not dinero_inicial < 10000:
      print(casas)
      pregunta_compra_br = int(input("\033[34mQue numero de edificio quieres comprar\033[0m\n"))
      if pregunta_compra_br == 1:
-      if "1" in numero_de_casa:
+       if "1" in numero_de_casa:
         print("\033[31mYa tienes la casa\033[0m")
-      if not "1" in numero_de_casa:
-       resta = dinero_inicial - 100000
-       dinero_inicial = resta 
-       almacen1 = numero_de_casa + "1"
-       numero_de_casa = almacen1
-       print(f"\033[34mTe has gastado 100.000$ por lo que te quedan: {dinero_inicial}\033[0m")
-      if pregunta_compra_br == 2:
+       if not "1" in numero_de_casa:
+        resta = dinero_inicial - 100000
+        dinero_inicial = resta 
+        almacen1 = numero_de_casa + "1"
+        numero_de_casa = almacen1
+        print(f"\033[34mTe has gastado 100.000$ por lo que te quedan: {dinero_inicial}\033[0m")
+     if pregunta_compra_br == 2:
         if "2" in numero_de_casa:
          print("\033[31mYa tienes la casa\033[0m")
         if not "2" in numero_de_casa:
