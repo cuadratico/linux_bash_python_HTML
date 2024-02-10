@@ -1,11 +1,10 @@
 #empezar la funcion de compra y venta de tiendas 
-#Revisar el problema del 0 al vender 
 print("Tu propia empresa\n")
 nombre_empresa = input("Cual es el nombre de tu empresa\n")
 nombre_CEO = input("Cual es tu nombre\n")
 dinero_inicial = int(input("Dime con cuanto dinero quieres empezar 100.000/1.000.000/10.000.000\n"))
 dia = 0
-numero_de_casa = ""
+numero_de_casa = []
 while not dinero_inicial < 10000: 
   print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa}\033[0m")
   print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO}\033[0m")
@@ -13,10 +12,14 @@ while not dinero_inicial < 10000:
   dia += 1
   print(f"\033[1m\033[33mHoy es el dia: {dia}\033[0m")
   print(f"\033[1m\033[33mTienes las propiedades: {numero_de_casa}\033[0m")
-  quieres_v_c_br = input("Que quieres hacer vender/comprar\n")
-  def bienes_raizes():
+  que_quires_h = input("Quer quieres hacer compra venta de: Bienes, Tiendas\n")
+  mayuscula = que_quires_h.capitalize()
+  que_quires_h = mayuscula
+  if que_quires_h == "Bienes":
+   def bienes_raizes():
     global dinero_inicial
     global numero_de_casa
+    quieres_v_c_br = input("Que quieres hacer vender/comprar\n")
     if quieres_v_c_br == "comprar":
      casas = {
         "1:Edificio_Atlantis":"valor:100.000:coste:10.000/mes:ganancias:35.000/mes",
@@ -25,23 +28,21 @@ while not dinero_inicial < 10000:
      print(casas)
      pregunta_compra_br = int(input("\033[34mQue numero de edificio quieres comprar\033[0m\n"))
      if pregunta_compra_br == 1:
-       if "1" in numero_de_casa:
-        print("\033[31mYa tienes la casa\033[0m")
        if not "1" in numero_de_casa:
         resta = dinero_inicial - 100000
         dinero_inicial = resta 
-        almacen1 = numero_de_casa + "1"
-        numero_de_casa = almacen1
-        print(f"\033[34mTe has gastado 100.000$ por lo que te quedan: {dinero_inicial}\033[0m")
+        numero_de_casa.append("1")
+        return(f"\033[34mTe has gastado 100.000$ por lo que te quedan: {dinero_inicial}\033[0m")
+       else:
+        return("\033[31mYa tienes la casa\033[0m")
      if pregunta_compra_br == 2:
-        if "2" in numero_de_casa:
-         print("\033[31mYa tienes la casa\033[0m")
         if not "2" in numero_de_casa:
          resta2 = dinero_inicial - 45000
          dinero_inicial = resta2
-         almacen2 = numero_de_casa + "2"
-         numero_de_casa = almacen2
-         print(f"\033[34mTe has gastado 45.000$ por lo que te quedan: {dinero_inicial}\033[0m")
+         numero_de_casa.append("2")
+         return(f"\033[34mTe has gastado 45.000$ por lo que te quedan: {dinero_inicial}\033[0m")
+        else:
+          return("\033[31mYa tienes la casa\033[0m")
     if quieres_v_c_br == "vender":
       casass = {
         "1:Edificio_Atlantis":"valor:100.000:coste:10.000/mes:ganancias:35.000/mes",
@@ -51,46 +52,23 @@ while not dinero_inicial < 10000:
       pregunta_venta_br = int(input("Que numero de edificio quieres vender\n"))
       if pregunta_venta_br == 1:
         if "1" in numero_de_casa:
-         venta_1 = dinero_inicial + 100000
-         dinero_inicial = venta_1
-         if numero_de_casa == "1":
-          entero_1_1 = int(numero_de_casa)
-          resta_1_1 = entero_1_1 - 1
-          resultado_1_1 = str(resta_1_1)
-          numero_de_casa = resultado_1_1
-         if numero_de_casa == "12":
-          entero_1_2 = int(numero_de_casa)
-          resta_1_2 = entero_1_2 - 10
-          resultado_1_2 = str(resta_1_2)
-          numero_de_casa = resultado_1_2
-         if numero_de_casa == "21":
-          entero_1_3 = int(numero_de_casa)
-          resta_1_3 = entero_1_3 - 19
-          resultado_1_3 = str(resta_1_3)
-          numero_de_casa = resultado_1_3
-         print("Has vendido la prepiedad 1 y has ganado: 100.000")
-      else:
-         print("\033[31mNo tienes la casa\033[0m")
+         venta = dinero_inicial + 100000
+         dinero_inicial = venta
+         numero_de_casa.remove("1")
+         return("Has vendido la prepiedad 1 y has ganado: 100.000")
+        else:
+          return("\033[31mNo tienes la casa\033[0m")
       if pregunta_venta_br == 2:
         if "2" in numero_de_casa:
-         venta_1 = dinero_inicial + 45000
-         dinero_inicial = venta_1
-         if numero_de_casa == "2":
-          entero_2_1 = int(numero_de_casa)
-          resta_2_1 = entero_2_1 - 2
-          resultado_2_1 = str(resta_2_1)
-          numero_de_casa = resultado_2_1
-         if numero_de_casa == "12":
-          entero_2_2 = int(numero_de_casa)
-          resta_2_2 = entero_2_2 - 11
-          resultado_2_2 = str(resta_2_2)
-          numero_de_casa = resultado_2_2
-         if numero_de_casa == "21":
-          entero_2_3 = int(numero_de_casa)
-          resta_2_3 = entero_2_3 - 20
-          resultado_2_3 = str(resta_2_3)
-          numero_de_casa = resultado_2_3
-         print("Has vendido la casa 2 y has ganado: 45.000")
-      else:
-       print("\033[31mNo tienes la casa\033[0m")
-  bienes_raizes()
+         venta2 = dinero_inicial + 45000
+         dinero_inicial = venta2
+         numero_de_casa.remove("2")
+         return("Has vendido la casa 2 y has ganado: 45.000")
+        else:
+          return("\033[31mNo tienes la casa\033[0m")
+   bienes_raizes()
+
+  if que_quires_h == "Tiendas":
+   def tiendas():
+    global dinero_inicial
+    global numero_de_casa
