@@ -1,0 +1,216 @@
+print(10 % 2)
+print( "hola" + str(5))
+print( "hola" + "5")
+print("hola" * 5)
+#strings 
+letras = "Hola" 
+print( len(letras))  #Numero de letras 
+
+string = "\testo es un salto de linea\n y otra linea con una tabulacion\t tabulacion"
+caso = "\\Hola"
+print(string)
+
+nombre, apellido, edad = "Tirso",  "Zaforas Vilchez", 14
+
+print(f"mi nombre es {nombre}, mi apellido es {apellido} y mi edad es {edad}")
+
+print( "mi nombre es {}, mi apellido es {} y mi edad es {}".format(nombre, apellido, edad))
+
+lengua = "Hola"
+a, b, c, d = lengua
+print(a)
+print(b)
+print(c)
+print(d)
+
+numero = "123"
+print(len(numero))
+
+#division de str 
+
+varibale = lengua[1:3]
+print(varibale)
+
+#reverse 
+
+variab = lengua[::-1]
+print(variab)
+
+
+#mi eleccion
+print(lengua.capitalize())#Primera letra mayuscula  
+print(lengua.upper())#Toda la palabra mayuscula
+print(lengua.count("o"))#Que numero es la letra
+print(lengua.isnumeric())#Si es un numero 
+print(lengua.lower())#Toda la palabra en minuscula 
+print(lengua.upper().isupper())#concatenar
+print(lengua.startswith("H"))#Para saber si empieza o no con la letra que le entregamos
+
+#sets#Un set no es una estrucutura ordenada
+My_sets = {"Tirso", "Zaforas Vilchez", 14}
+my_other_set = {}#llaves para deccionarios y sets 
+
+sets = {"Tirso", "Zaforas Vilchez", 14}
+print(type(sets))
+print(sets)
+print(len(sets))#mideo la longitud#Cuantos elementos tiene la variable sets
+#elementos de sets
+sets.add("añadido")# añadir un elemento
+print(sets)
+sets.remove("añadido")
+print("añadido" in sets)#comprobar que un elemento existe dentro de un set
+print(sets)
+sets.clear()#Elimina todos los elementos de un set
+#de set a lista
+setes = {"Tirso", "Zaforas Vilchez", 14}
+lista = list(setes)
+print(len(lista))
+
+#uniones 
+sets = {"Tirso", "Hola", "Zaforas Vilchez"}
+setss = {"Zaforas Vilchez", "Tirso"}
+print(sets.union(setss).union({14}))
+#Diferencia 
+print(sets.difference(setss))
+del sets#elimina la varibale del codigo
+#no hay control sobre los elementos#Un set no admite repetidos 
+
+#diccionario(explicacion)
+dic = {
+    "Google":"Alphabet",
+    "Windows":"Microsoft",
+    "Macos":"Apple"
+}
+print(type(dic))
+print(len(dic))#Ver la cantidada de elemtos que tiene un diccionario
+print(dic["Windows"])#buscar un elemto en el diccionario
+dic["Windows"]= "Hola"#modificar o añadir elementos al diccionario
+print(dic["Windows"])
+print(dic)
+del dic["Windows"]#Eliminar elementos 
+print(dic)
+print("Windows" in dic)#Para saber si el elemento Windows esta en el dicionario
+print("Google" in dic)
+print(dic.items())#Te dice los items que hay en el diccionario
+print(dic.keys())#te dice las llaves que hay en el diccionario
+print(dic.values())#Te dice los valores que hay en el diccionario
+print(dic.fromkeys(("Google", "MIcrosoft")))#Crear un diccionario sin valores 
+print(dic)
+print(dic.fromkeys(dic, "Hola"))#Que todas las llaves de dic almacenen Hola 
+print(list(dic))#Lo transformo en una lista y me da unicamente las claves 
+print(set(dic))
+print(tuple(dic))
+#no adverso
+print("{'Zaforas Vilchez', 'Tirso', 14}")
+
+#condicionales 
+numero = 12
+
+if numero > 100 and numero < 200:
+    print("el numero esta entre 100 y 200")
+elif numero < 100 and numero > 0:
+        print("el numero esta entre 0 y 100")
+else:
+            print("el numero es mayor que 200")
+
+#Loops o bucles 
+#While 
+
+
+condicion = 0 
+while condicion < 10:
+  condicion += 1#suma la varible condicion 1 por cada vuelta 
+  print(f"esta siguiendo la condicion: {condicion}")
+  if condicion == 5:
+    print("la condicion es 5")
+    break
+else:
+    print("deja de seguir la condicion")#Tambien se le puede añadir if y elif. Deja de cumplir la condicion cunado el numero es  mayor a 10
+
+#for 
+    diciconario = {
+        "Google":"Alphabet",
+        "Windows":"MIcorosft"
+    }
+    for i in diciconario:
+      print(f"el valor en esta vuelta es de: {i}")#darle un valor de la lista a este print por cada vuelta 
+    if i == "Microsoft":
+      print("estas eligiendo a Microosft")#continue#continua volviendo ha hacer el for #tambien podemos utilizar break
+#Tambien se puede utilizar elif y else 
+
+#Funciones 
+def funcion():
+ print("Hola")
+funcion()#llamo a la funcion
+
+def suma (primer_numero, segundo_numero):
+    print(primer_numero + segundo_numero)
+    sumar(2, 8)
+    sumar(2, 6)
+    sumar("2", "5")
+
+#recibir parametros con funciones 
+def funcion(numero, numeros): 
+ return numero + numeros
+ varibale = funcion(1,2)
+ print(varibale)
+ #reeordenar parametros de una funcion
+def name (nombre, apellido):
+    print(f"{nombre} {apellido}")
+
+    name( apellido = "Zaforas", nombre = "Tirso")
+
+    #valor por defecto
+    def namee (nombre, apellido, alias = "otro"):
+     print(f"{nombre} {apellido} {alias}")
+    namee( "Tirso", "Zaforas", "cuadratico")
+
+#numero de parametros dinamico
+    def texto(*text):
+     for texts in texto:
+        print(texts.upper())
+     texto("Hola")
+
+#clases 
+class Person1:#mejor en mayuscula, sin espacion y sin guiones bajos(unicamente una buena practica para futuro)
+    pass 
+
+
+class person2:#__init__ es un constructor de clases 
+    def __init__(self, name, surname, alias = "sin alias"):# no es una funcion como definicion
+        self.name = name 
+        self.surname = surname 
+        self.nombre_completo = f"{name} {surname} {alias}"
+
+
+
+my_other_person = person2("Quique", "Vilchez", "Sorribas")
+my_person = person2("Tirso", "Zaforas")
+print(my_person.name)#imprime Tirso
+print(my_person.surname)#imprime zaforas 
+print(f"{my_person.name} {my_person.surname}")#Esto imprime Tirso Zaforas 
+print(my_person.nombre_completo)#Esto imprime Tirso Zaforas 
+print(f"{my_other_person.name} {my_other_person.surname}")
+my_other_person.nombre_completo = "Quique Tio"
+print(my_other_person.nombre_completo)#esto deberia dar Quique Tio
+class persona:
+
+    def __init__ (self, name):#en todas las funciones tienes que pasar la propiedad self
+     self.__name__ = name#variable privada 
+    def caminando(self):
+        print(f"{self.__name__} esta caminando")
+
+mi_persona = persona("Tirso")
+#print(mi_persona.get_name())#imprimir una varibale aunque sea privada 
+mi_persona.caminando()# esto deberia imprimir Tirso esta caminando
+
+
+#excepciones 
+#control de errores:EJ
+numero= "1"
+try: 
+ print(numero.isnumeric())
+except:
+ AttributeError: print("Error")
+
+#Practica
