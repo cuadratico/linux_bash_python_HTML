@@ -1,0 +1,24 @@
+import tkinter
+#creacion de la ventana
+ventana = tkinter.Tk()
+ventana.geometry("500x400")
+#imprime una etiqueta que dice Hola
+etiqueta = tkinter.Label(ventana, text="Hola")
+etiqueta.pack(side=tkinter.BOTTOM)
+#cada vez que presiono en el boton imprime Hola
+def funcion():
+    print("Hola")
+boton = tkinter.Button(ventana, text= "Presiona", command=funcion)
+boton.pack()
+#caja de texto
+cuadro_de_texto= tkinter.Entry(ventana)
+cuadro_de_texto.pack()
+#poner el texto en la terminal
+def texto():
+   texto = cuadro_de_texto.get()
+   print(texto)
+boton1 = tkinter.Button(ventana, text="cuadro de texto", command=texto)
+boton1.pack()
+
+ventana.mainloop()
+
