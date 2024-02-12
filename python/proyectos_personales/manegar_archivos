@@ -1,11 +1,8 @@
 try:
- with open("proyecto.txt", "r+") as f:
-    f.write("Hola")
-    f.seek(0)
+ with open ("archivo.txt", "w+") as f:
+    f.write("Hola\n")
+    f.write("Me llamo Tirso\n")
     leer = f.read()
-    if "Hola" in leer:
-        print("Hola esta en el archivo")
-    else:
-        print("Hola no esta en el archivo")
+
 except:
  FileNotFoundError: print("Parece que el archivo no esta en el directorio") # type: ignore
