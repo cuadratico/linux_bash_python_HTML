@@ -1,7 +1,12 @@
 import ccxt
 monedero = ccxt.binance()
-moneda = "BTC/EUR"
-ticker = monedero.fetch_ticker(moneda)
-precio_actual = ticker["last"]
 
-print(f"precio de BTC {precio_actual}")
+moneda_btc = "BTC/EUR"
+ticker_btc = monedero.fetch_ticker(moneda_btc)
+precio_actual = ticker_btc["last"]
+
+moneda_eth = "ETH/EUR"
+ticker_eth = monedero.fetch_ticker(moneda_eth)
+precio_actual2 = ticker_eth["last"]
+print(f"Precio de BTC: {precio_actual}€")
+print(f"Precio de ETH: {precio_actual2}€")
