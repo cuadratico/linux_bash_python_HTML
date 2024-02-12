@@ -1,8 +1,0 @@
-try:
- with open ("archivo.txt", "w+") as f:
-    f.write("Hola\n")
-    f.write("Me llamo Tirso\n")
-    leer = f.read()
-
-except:
- FileNotFoundError: print("Parece que el archivo no esta en el directorio") # type: ignore
