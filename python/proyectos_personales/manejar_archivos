@@ -1,6 +1,6 @@
 try:
-añadir = input("Que quieres añadr al archivo\n")
-with open("archivo.txt", "w+") as f:
+ añadir = input("Que quieres añadr al archivo\n")
+ with open("archivo.txt", "w+") as f:
     f.write(añadir)
 except:
  FileNotFoundError: print("Parece que el archivo no esta en el directorio") # type: ignore
