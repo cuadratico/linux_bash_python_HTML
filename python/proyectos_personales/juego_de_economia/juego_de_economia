@@ -164,15 +164,16 @@ while not dinero_inicial < 10000:
       resta1 = dinero_inicial - dinero1
       dinero_inicial = resta1
       division1 = dinero1 / precio_actual3
-      dinero_invertico_en_cripto.append("ETH")
-      dinero_invertico_en_cripto.append(division1)
-   if intentos >= 2:
-      suma1 = division1 + division1
-      posicion1 = dinero_invertico_en_cripto.index(division1)
-      dinero_invertico_en_cripto[posicion1] = suma1
-      print(f"Tienes {division1}BTC")
-   else:
-      print(f"Tienes {division1}BTC")
+      if intentos == 1:  
+       dinero_invertico_en_cripto.append("ETH")
+       dinero_invertico_en_cripto.append(division1)
+      if intentos >= 2:
+       suma1 = division1 + division1
+       posicion1 = dinero_invertico_en_cripto.index(division1)
+       dinero_invertico_en_cripto[posicion1] = suma1
+       print(f"Tienes {division1}ETH")
+      else:
+       print(f"Tienes {division1}BTC")
    
 
 
@@ -193,3 +194,4 @@ while not dinero_inicial < 10000:
    inversion()
   else:
     print("\033[31mParece que has escrito algo mal\033[0m")
+  
