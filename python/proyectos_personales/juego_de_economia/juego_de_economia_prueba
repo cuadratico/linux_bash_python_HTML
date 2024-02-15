@@ -1,0 +1,237 @@
+#reparar la logica de la funcion inversion, añadir la opcion de venta y el resto de criptomonedas
+import ccxt
+print("Capitalism 3\n")
+nombre_empresa = input("Cual es el nombre de tu empresa\n")
+nombre_CEO = input("Cual es tu nombre\n")
+dinero_inicial = int(input("Dime con cuanto dinero quieres empezar 100.000/1.000.000/10.000.000\n"))
+dia = 0
+
+intentos_eth = 0
+intentos_btc = 0
+intentos_doge = 0
+numero_de_casa = []
+numero_de_tiendas = []
+dinero_invertico_en_cripto = []
+
+while not dinero_inicial < 10000: 
+  print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa}\033[0m")
+  print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO}\033[0m")
+  print(f"\033[1m\033[33mTu dinero es: {dinero_inicial}€\033[0m")
+  dia += 1
+  print(f"\033[1m\033[33mHoy es el dia: {dia}\033[0m")
+  print(f"\033[1m\033[33mTienes las propiedades: {numero_de_casa}\033[0m"), print(f"\033[1m\033[33mTienes las tiendas: {numero_de_tiendas}\033[0m")
+  print(f"\033[1m\033[33mTienes las inversiones: {dinero_invertico_en_cripto}\033[0m")  
+  def bienes_raizes():
+    global dinero_inicial
+    global numero_de_casa
+
+    quieres_v_c_br = input("Que quieres hacer vender/comprar\n")
+    if quieres_v_c_br == "comprar":
+     casas_c_br = {
+        "1:Edificio_Atlantis":"valor:100.000€:coste:10.000€/mes:ganancias:35.000€/mes",
+        "2:Edificio_cosco":"valor:45.000€:coste:5.600€/mes:ganacias:12.000€/mes"
+     }
+     print(casas_c_br)
+     pregunta_compra_br = int(input("\033[34mQue numero de edificio quieres comprar\033[0m\n"))
+
+     if pregunta_compra_br == 1:
+       if not "1" in numero_de_casa:
+        resta_br_c = dinero_inicial - 100000
+        dinero_inicial = resta_br_c
+        numero_de_casa.append("1")
+        print(f"\033[34mTe has gastado 100.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
+       else:
+        print("\033[31mYa tienes la casa\033[0m")
+
+     if pregunta_compra_br == 2:
+        if not "2" in numero_de_casa:
+         resta2_br_c = dinero_inicial - 45000
+         dinero_inicial = resta2_br_c
+         numero_de_casa.append("2")
+         print(f"\033[34mTe has gastado 45.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
+        else:
+          print("\033[31mYa tienes la casa\033[0m")
+
+    if quieres_v_c_br == "vender":
+      casass_v_br = {
+        "1:Edificio_Atlantis":"valor:100.000€:coste:10.000€/mes:ganancias:35.000€/mes",
+        "2:Edificio_cosco":"valor:45.000€:coste:5.600€/mes:ganacias:12.000€/mes"
+     }
+      print(casass_v_br)
+      pregunta_venta_br = int(input("Que numero de edificio quieres vender\n"))
+
+      if pregunta_venta_br == 1:
+        if "1" in numero_de_casa:
+         suma_br_v = dinero_inicial + 100000
+         dinero_inicial = suma_br_v
+         numero_de_casa.remove("1")
+         print("\033[34mHas vendido la prepiedad 1 y has ganado: 100.000€\033[0m")
+        else:
+          print("\033[31mNo tienes la casa\033[0m")
+
+      if pregunta_venta_br == 2:
+        if "2" in numero_de_casa:
+         suma2_br_v = dinero_inicial + 45000
+         dinero_inicial = suma2_br_v
+         numero_de_casa.remove("2")
+         print("\033[34mHas vendido la casa 2 y has ganado: 45.000€\033[0m")
+        else:
+          print("\033[31mNo tienes la casa\033[0m")
+
+  
+  def tiendas():
+    global dinero_inicial
+    global numero_de_tiendas
+    quieres_v_c_t = input("Que quieres hacer vender/comprar\n")
+    if quieres_v_c_t == "comprar":
+     casas_t_c = {
+        "1:Tienda_Atlanta":"valor:85.000€:coste:7.000€/mes:ganancias:15.000€/mes",
+        "2:Tienda_cosco":"valor:60.000€:coste:5.600€/mes:ganacias:9.000€/mes"
+     }
+     print(casas_t_c)
+     pregunta_compra_t = int(input("\033[38;5;216mQue numero de tienda quieres comprar\033[0m\n"))
+
+     if pregunta_compra_t == 1:
+       if not "1" in numero_de_tiendas:
+        resta_t_c = dinero_inicial - 85000
+        dinero_inicial = resta_t_c 
+        numero_de_tiendas.append("1")
+        print(f"\033[38;5;216mTe has gastado 85.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
+       else:
+        print("\033[31mYa tienes la tienda\033[0m")
+
+     if pregunta_compra_t == 2:
+        if not "2" in numero_de_tiendas:
+         resta2_t_c = dinero_inicial - 60000
+         dinero_inicial = resta2_t_c
+         numero_de_tiendas.append("2")
+         print(f"\033[38;5;216mTe has gastado 60.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
+        else:
+          print("\033[31mYa tienes la tienda\033[0m")
+
+    if quieres_v_c_t == "vender":
+      casass_t_v = {
+        "1:Tienda_Atlanta":"valor:85.000€:coste:7.000€/mes:ganancias:15.000€/mes",
+        "2:Tienda_cosco":"valor:60.000€:coste:5.600€/mes:ganacias:9.000€/mes"
+     }
+      print(casass_t_v)
+      pregunta_venta_t = int(input("\033[38;5;216mQue numero de tienda quieres vender\033[0m\n"))
+
+      if pregunta_venta_t== 1:
+        if "1" in numero_de_tiendas:
+         venta_t_v = dinero_inicial + 85000
+         dinero_inicial = venta_t_v
+         numero_de_tiendas.remove("1")
+         print("\033[38;5;216mHas vendido la prepiedad 1 y has ganado: 85.000€\033[0m")
+        else:
+          print("\033[31mNo tienes la tienda\033[0m")
+
+      if pregunta_venta_t == 2:
+        if "2" in numero_de_tiendas:
+         venta2_t_v = dinero_inicial + 60000
+         dinero_inicial = venta2_t_v
+         numero_de_tiendas.remove("2")
+         print("\033[38;5;216mHas vendido la casa 2 y has ganado: 60.000€\033[0m")
+        else:
+          print("\033[31mNo tienes la tienda\033[0m")
+  
+
+  def inversion():
+   global intentos_eth
+   global dinero_inicial
+   global dinero_invertico_en_cripto
+   try:
+     monedero = ccxt.binance()
+
+     moneda_btc = "BTC/EUR"
+     ticker_btc = monedero.fetch_ticker(moneda_btc)
+     precio_actual = ticker_btc["last"]
+
+     moneda_doge = "DOGE/EUR"
+     ticker_doge = monedero.fetch_ticker(moneda_doge)
+     precio_actual2 = ticker_doge["last"]
+
+     moneda_eth = "ETH/EUR"
+     ticker_eth = monedero.fetch_ticker(moneda_eth)
+     precio_actual3 = ticker_eth["last"]
+     print(f"Precio de BTC: {precio_actual}€")
+     print(f"Precio de DOGE: {precio_actual2}€")
+     print(f"Precio de ETH: {precio_actual3}€")
+   except:
+     AttributeError: print("No tienes internet") #type: ignore
+   pregunta_inversion_cripyo = input("En que quieres invertir: Ethereum, Bitcoin, Dogecoin\n")
+   mayuscula_cripto = pregunta_inversion_cripyo.capitalize()
+
+   if  mayuscula_cripto == "Ethereum":
+      suma_eth = intentos_eth + 1
+      intentos_eth = suma_eth
+      dinero1 = int(input("Cuanto dinero quieres invertir\n"))
+      resta1 = dinero_inicial - dinero1
+      dinero_inicial = resta1
+      division1 = dinero1 / precio_actual3
+      if intentos_eth == 1:  
+       dinero_invertico_en_cripto.append("ETH")
+       dinero_invertico_en_cripto.append(division1)
+      elif intentos_eth >= 2:
+       suma1 = division1 + division1
+       if division1 in dinero_invertico_en_cripto:
+        posicion1 = dinero_invertico_en_cripto.index(division1)
+        dinero_invertico_en_cripto[posicion1] = suma1
+        print(f"Tienes {division1}ETH")
+       if suma1 in dinero_invertico_en_cripto:
+         posicion2 = dinero_invertico_en_cripto.index(suma1)
+         dinero_invertico_en_cripto[posicion2] = suma1
+         print(f"Tienes {division1}ETH")
+
+   if mayuscula_cripto == "Bitcoin":
+      dinero2= int(input("Cuanto dinero quieres invertir\n"))
+      resta2 = dinero_inicial - dinero2
+      dinero_inicial = resta2
+      division2 = dinero2 / precio_actual
+      if division2 not in dinero_invertico_en_cripto:  
+       dinero_invertico_en_cripto.append("BTC")
+       dinero_invertico_en_cripto.append(division2)
+      elif division2 in dinero_invertico_en_cripto:
+       suma2 = division2 + division2
+       posicion2 = dinero_invertico_en_cripto.index(division2)
+       dinero_invertico_en_cripto[posicion2] = suma2
+       print(f"Tienes {division2}BTC")
+      else:
+       print(f"Tienes {division2}BTC")
+
+   if mayuscula_cripto == "Dogecoin":
+      dinero3= int(input("Cuanto dinero quieres invertir\n"))
+      resta3 = dinero_inicial - dinero3
+      dinero_inicial = resta3
+      division3 = dinero3 / precio_actual2
+      if division3 not in dinero_invertico_en_cripto:  
+       dinero_invertico_en_cripto.append("DOGE")
+       dinero_invertico_en_cripto.append(division3)
+      elif division3 in dinero_invertico_en_cripto:
+       suma3 = division3 + division3
+       posicion3 = dinero_invertico_en_cripto.index(division3)
+       dinero_invertico_en_cripto[posicion3] = suma3
+       print(f"Tienes {division3}DOGE")
+      else:
+       print(f"Tienes {division3}DOGE")
+   
+
+
+
+
+
+
+
+
+  que_quires_h = input("Quer quieres hacer compra venta de: Bienes, Tiendas, Criptomonedas\n")
+  mayuscula =  que_quires_h.capitalize()
+  que_quires_h = mayuscula
+  if que_quires_h == "Tiendas" or que_quires_h == "Tiendas ":
+    tiendas()
+  elif que_quires_h == "Bienes" or que_quires_h == "Bienes ":
+    bienes_raizes()
+  elif que_quires_h == "Criptomonedas":
+   inversion()
+  else:
+    print("\033[31mParece que has escrito algo mal\033[0m")
+  
