@@ -1,10 +1,12 @@
 print("Razon y proporcion\n")
-while True:
+intentos = 0
+while intentos < 100:
+  intentos += 1
   try:
-   numero1 = int(input("Dime un numero\n"))
-   numero2 = int(input("Dime un numero\n"))
-   numero3 = int(input("Dime un numero\n"))
-   numero4 = int(input("Dime un numero\n"))
+   numero1 = int(input("Dime un numero, parte superior izquierad\n"))
+   numero2 = int(input("Dime un numero, parte inferior izquierda\n"))
+   numero3 = int(input("Dime un numero, parte superior derecha\n"))
+   numero4 = int(input("Dime un numero, parte inferior derecha\n"))
 
    division1 = numero1 / numero2
    division2 = numero3 / numero4
