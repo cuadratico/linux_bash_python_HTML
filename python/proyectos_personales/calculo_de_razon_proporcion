@@ -1,0 +1,17 @@
+print("Razon y proporcion\n")
+while True:
+  try:
+   numero1 = int(input("Dime un numero\n"))
+   numero2 = int(input("Dime un numero\n"))
+   numero3 = int(input("Dime un numero\n"))
+   numero4 = int(input("Dime un numero\n"))
+
+   division1 = numero1 / numero2
+   division2 = numero3 / numero4
+
+   if division1 == division2:
+    print("La razon forma una proporcion")
+   else:
+    print("La razon no forma una proporcion")
+  except:
+   ValueError: print("Has escrito un valor que no es entero") #type: ignore
