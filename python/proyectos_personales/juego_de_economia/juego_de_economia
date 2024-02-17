@@ -2,18 +2,22 @@
 import ccxt
 print("Capitalism 3\n")
 nombre_empresa = input("Cual es el nombre de tu empresa\n")
+nombre_empresa_mayuscula = nombre_empresa.capitalize()
 nombre_CEO = input("Cual es tu nombre\n")
+nombre_CEO_mayuscula = nombre_CEO.capitalize()
 dinero_inicial = int(input("Dime con cuanto dinero quieres empezar 100.000/1.000.000/10.000.000\n"))
 dia = 0
 
 intentos_btc = 0
+intentos_eth = 0
+intentos_eth = 0
 numero_de_casa = []
 numero_de_tiendas = []
 dinero_invertico_en_cripto = []
 
 while not dinero_inicial < 10000: 
-  print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa}\033[0m")
-  print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO}\033[0m")
+  print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa_mayuscula}\033[0m")
+  print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO_mayuscula}\033[0m")
   print(f"\033[1m\033[33mTu dinero es: {dinero_inicial}€\033[0m")
   dia += 1
   print(f"\033[1m\033[33mHoy es el dia: {dia}\033[0m")
@@ -134,7 +138,7 @@ while not dinero_inicial < 10000:
   
 
   def inversion():
-   global intentos_btc, dinero_inicial, dinero_invertico_en_cripto, posicion
+   global intentos_btc, intentos_eth, dinero_inicial, dinero_invertico_en_cripto, posicion1, posicion2
    try:
      monedero = ccxt.binance()
 
@@ -167,11 +171,27 @@ while not dinero_inicial < 10000:
       if intentos_btc == 1:
        dinero_invertico_en_cripto.append("BTC")
        dinero_invertico_en_cripto.append(division1)
-       posicion = dinero_invertico_en_cripto.index(division1)
+       posicion1 = dinero_invertico_en_cripto.index(division1)
       if intentos_btc >= 2:
-        valor = dinero_invertico_en_cripto[posicion]
-        suma = division1 + valor
-        dinero_invertico_en_cripto[posicion] = suma
+        valor1 = dinero_invertico_en_cripto[posicion1]
+        suma1 = division1 + valor1
+        dinero_invertico_en_cripto[posicion1] = suma1
+
+   if  mayuscula_cripto == "Ethereum":
+      suma_eth = intentos_eth + 1
+      intentos_eth = suma_eth
+      dinero2 = int(input("Cuanto dinero quieres invertir\n"))
+      resta2 = dinero_inicial - dinero2
+      dinero_inicial = resta2
+      division2 = dinero2 / precio_actual3
+      if intentos_eth == 1:
+       dinero_invertico_en_cripto.append("ETH")
+       dinero_invertico_en_cripto.append(division2)
+       posicion2 = dinero_invertico_en_cripto.index(division2)
+      if intentos_eth >= 2:
+        valor2 = dinero_invertico_en_cripto[posicion2]
+        suma2 = division2 + valor2
+        dinero_invertico_en_cripto[posicion2] = suma2
         
 
 
