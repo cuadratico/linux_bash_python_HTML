@@ -145,9 +145,9 @@ funcion()#llamo a la funcion
 
 def suma (primer_numero, segundo_numero):
     print(primer_numero + segundo_numero)
-    sumar(2, 8)
-    sumar(2, 6)
-    sumar("2", "5")
+    suma(2, 8)
+    suma(2, 6)
+    suma("2", "5")
 
 #recibir parametros con funciones 
 def funcion(numero, numeros): 
@@ -205,12 +205,28 @@ mi_persona = persona("Tirso")
 mi_persona.caminando()# esto deberia imprimir Tirso esta caminando
 
 
-#excepciones 
+#manejo de errores  
 #control de errores:EJ
-numero= "1"
+numero= "Hola"
 try: 
  print(numero.isnumeric())
-except:
- AttributeError: print("Error")
+except Exception as error:
+ #controlar error y saber a que se corresponde 
+ print(error)
+finally:
+   print("La ejecucion continua")
 
-#Practica
+
+
+#Modulos 
+#Accedo al archivo donde esta situada esta funcion
+import module
+print(module.numero)
+import math 
+#imprime el numero pi 
+print(math.pi)
+
+#el renombrado pi como valor_pi
+from math import pi as valor_pi
+
+print(valor_pi)
