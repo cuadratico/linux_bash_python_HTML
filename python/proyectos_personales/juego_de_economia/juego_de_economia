@@ -1,4 +1,5 @@
-#reparar la logica de la funcion inversion, añadir la opcion de venta y el resto de criptomonedas
+#reparar la logica de la funcion inversion/vender, añadir la opcion de venta y el resto de criptomonedas
+# Y añadir un conversor de criptomonedas a euros y viceversa
 import ccxt
 print("Capitalism 3\n")
 nombre_empresa = input("Cual es el nombre de tu empresa\n")
@@ -21,7 +22,8 @@ while not dinero_inicial < 10000:
   print(f"\033[1m\033[33mTu dinero es: {dinero_inicial}€\033[0m")
   dia += 1
   print(f"\033[1m\033[33mHoy es el dia: {dia}\033[0m")
-  print(f"\033[1m\033[33mTienes las propiedades: {numero_de_casa}\033[0m"), print(f"\033[1m\033[33mTienes las tiendas: {numero_de_tiendas}\033[0m")
+  print(f"\033[1m\033[33mTienes las propiedades: {numero_de_casa}\033[0m") 
+  print(f"\033[1m\033[33mTienes las tiendas: {numero_de_tiendas}\033[0m")
   print(f"\033[1m\033[33mTienes las inversiones: {dinero_invertico_en_cripto}\033[0m")  
   def bienes_raizes():
     global dinero_inicial
@@ -153,18 +155,26 @@ while not dinero_inicial < 10000:
      moneda_eth = "ETH/EUR"
      ticker_eth = monedero.fetch_ticker(moneda_eth)
      precio_actual3 = ticker_eth["last"]
-     print(f"Precio de BTC: {precio_actual}€")
-     print(f"Precio de DOGE: {precio_actual2}€")
-     print(f"Precio de ETH: {precio_actual3}€")
+     print(f"\033[32mPrecio de BTC: {precio_actual}€\033[0m")
+     print(f"\033[32mPrecio de DOGE: {precio_actual2}€\033[0m")
+     print(f"\033[32mPrecio de ETH: {precio_actual3}€\033[0m")
    except:
      AttributeError: print("No tienes internet") #type: ignore
-   pregunta_inversion_cripyo = input("En que quieres invertir: Ethereum, Bitcoin, Dogecoin\n")
-   mayuscula_cripto = pregunta_inversion_cripyo.capitalize()
+   pregunta_c_v_c = input("\033[32mQuieres Comprar o Vender\033[0m\n")
+   mayuscula_c_v_c = pregunta_c_v_c.capitalize()
+   if mayuscula_c_v_c == "Comprar": 
+    pregunta_inversion_cripyo = input("\033[32mEn que quieres invertir: Ethereum, Bitcoin, Dogecoin\033[0m\n")
+    mayuscula_cripto = pregunta_inversion_cripyo.capitalize()
 
-   if  mayuscula_cripto == "Bitcoin":
+    if  mayuscula_cripto == "Bitcoin":
       suma_btc = intentos_btc + 1
       intentos_btc = suma_btc
-      dinero1 = int(input("Cuanto dinero quieres invertir\n"))
+      dinero1 = int(input("\033[32mCuanto dinero quieres invertir\033[0m\n"))
+      
+      valor_de_dinero = 0
+      suma_dinero = valor_de_dinero + dinero1
+      
+
       resta1 = dinero_inicial - dinero1
       dinero_inicial = resta1
       division1 = dinero1 / precio_actual
@@ -177,10 +187,10 @@ while not dinero_inicial < 10000:
         suma1 = division1 + valor1
         dinero_invertico_en_cripto[posicion1] = suma1
 
-   if  mayuscula_cripto == "Ethereum":
+    if  mayuscula_cripto == "Ethereum":
       suma_eth = intentos_eth + 1
       intentos_eth = suma_eth
-      dinero2 = int(input("Cuanto dinero quieres invertir\n"))
+      dinero2 = int(input("\033[32mCuanto dinero quieres invertir\033[0m\n"))
       resta2 = dinero_inicial - dinero2
       dinero_inicial = resta2
       division2 = dinero2 / precio_actual3
@@ -193,10 +203,10 @@ while not dinero_inicial < 10000:
         suma2 = division2 + valor2
         dinero_invertico_en_cripto[posicion2] = suma2
 
-   if  mayuscula_cripto == "Dogecoin":
+    if  mayuscula_cripto == "Dogecoin":
        suma_dge = intentos_dge + 1
        intentos_dge = suma_dge
-       dinero3 = int(input("Cuanto dinero quieres invertir\n"))
+       dinero3 = int(input("\033[32mCuanto dinero quieres invertir\033[0m\n"))
        resta3 = dinero_inicial - dinero3
        dinero_inicial = resta3
        division3 = dinero3 / precio_actual2
@@ -208,6 +218,18 @@ while not dinero_inicial < 10000:
          valor3 = dinero_invertico_en_cripto[posicion3]
          suma3 = division3 + valor3
          dinero_invertico_en_cripto[posicion3] = suma3
+
+   if mayuscula_c_v_c == "Vender":
+    pregunta_vender = input("Que quieres vender: Ethereum, Bitcoin, Dogecoin\n")
+    mayuscula_vender_c = pregunta_vender.capitalize()
+   if mayuscula_vender_c == "Bitcoin":
+     pregunta_d1 = input("Cuanto  quieres vender")
+     if intentos_btc == 2:
+       print
+     if pregunta_d1 > valor_de_dinero:
+       print("No has invertido tanto capital")
+     
+
         
 
 
@@ -216,11 +238,6 @@ while not dinero_inicial < 10000:
       
 
    
-
-
-
-
-
 
 
 
