@@ -1,0 +1,4 @@
+a = "Hola mundo"
+#De esta manera podemos saber cuantas veces sale la letra o en Hola mundo
+veces = a.count("o")
+print(veces)
