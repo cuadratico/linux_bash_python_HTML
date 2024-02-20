@@ -1,0 +1,23 @@
+import random
+lista = "🍒🍎🍌🍍"#ganar 3 piñas: 100, 3 manzanas: 50, 3 platanos: 20, 3 cerezas: 5
+dinero_pregunta = int(input("Cuanto dinero quieres meter\n"))
+dinero = 0
+suma_dinero = dinero + dinero_pregunta
+dinero = suma_dinero
+intentos = 0
+while dinero > 0:
+ suma1 = intentos + 1
+ intetnos = suma1
+ suma2 = dinero - 1
+ dinero = suma2
+ pregunta = input("presione enter\n")
+ print(f"Tienes: {dinero}€")
+ valor = lista.split()
+ randome = random.sample(lista,3)
+ separador = "".join(randome)
+ suma = intentos + 1
+ intentos = suma
+ print(separador)
+ if "🍍" in separador:
+  suma3 = dinero + 5
+  dinero = suma3
