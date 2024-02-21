@@ -1,0 +1,2 @@
+text = "abcdefgh"
+print(text[1:7:2])#1: desde que digito se quiere imprimir el caracter, 7: hasta que numero quieres que se imprima, 2: de cuanto en cuanto quieres que se imprima 
