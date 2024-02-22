@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <a href="https://blackwebinc.wixsite.com/blackweb">
-        <button>blackweb</button>
-    <title>blackwebinc</title>
+    <title>Portafolio</title>
+    <a href="juego_de_economia.html">
+        <button>juego de economia</button>
+    
+    </a>
+    <a href="qrcode.html">
+        <button>qrcode</button>
+    </a>
+    <a href="descarga_de_de_yotuube.html">
+        <button>Descargar video de youtube</button>
+    </a>
+    <a href="mensajes_de_app.html">
+        <button>Mensaje de Whatsapp</button>
+    </a>
+    <a href="tragamonedas.html">
+        <button>Tragamonedas</button>
+    </a>
+    <a href="valor_de_BTC.html">
+        <button>Valor de BTC</button>
     </a>
  </head>
 <body>
