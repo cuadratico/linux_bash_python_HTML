@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title> 
+    <link rel="stylesheet" href="styles.css">
+</head> 
+<body>
+    <div style="text-align: center;" class="form-content" style="display: flex; flex-direction: column;">
+       <h2 class="center">Enivar su formulario</h2>
+     <form action="https://formsubmit.co/tirsi333@gmail.com" method="POST" >
+
+       <label for="name">Nombre</label>
+       <input type="text" name="Nombre" id="name">
+
+       <label for="email">Correo electronico</label>
+       <input type="email" name="Correo electronico" id="email">
+
+       <label for="subjet">Que quireres hacer</label>
+       <input type="text" name="Asunto" id="subject">
+
+       <label for="coments">Que quieres comprar</label>
+       <textarea name="Comentarios" id="coments" cols="30" rows="5"></textarea>
+       
+       <input class="btn" type="submit" value="Enviar">
+         <input type="hidden" name="_next" value="http://127.0.0.1:5500/formulario.html">
+         <input type="hidden" name="_captcha" value="false">
+      <a href="web.html">
+       <button>Inicio</button>
+     </a>
+     </form>
+    
+    </div> 
+     
+</body> 
+</html>
