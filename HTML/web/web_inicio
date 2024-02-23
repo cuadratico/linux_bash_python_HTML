@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Enrique</title>
+    
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <header class="center">
+      <h1>Enrique</h1>
+        <details>
+            <summary>Quienes somos</summary>
+            <p>Tienda de reparacion de electrodomenticos de Alcañiz</p>
+        </details>
+
+    <link rel="stylesheet"
+    href="prueba.css">
+    </header>
+
+    <header>
+     <a href="subpagina_JBL.html">
+       <input type="image" src="Jbl.jpeg" alt="Enviar" width="245" height="200" style="margin-top: 100px;">
+     </a>
+
+     <a href="subpagina_pioner.html">
+       <input type="image" src="pioner.jpeg" alt="Enviar" width="245" height="200" style="margin-left: 250px;">
+     </a>
+
+     <a href="subpagina_sonos.html">
+       <input type="image" src="Sonos.jpeg" alt="Enviar" width="245" height="200" style="margin-left: 200px;">
+     </a>
+    </header>
+
+    <header>
+     <a href="subpagina_altavoz.html">
+       <input type="image" src="altavoz2.jpg" alt="Enviar" width="245" height="200" style="margin-top: 100px;">
+     </a>
+     <a href="subpaginalg.html">
+       <input type="image" src="televisionlg.jpeg" alt="Enviar" width="245" height="200" style="margin-left: 250px;">
+     </a>
+
+     <a href="subpagina_proyector.html">
+     <input type="image" src="proyector.jpeg" alt="Enviar" width="245" height="200" style="margin-left: 200px;">
+     </a>
+    </header>
+    
+   
+</body>
+</html>
