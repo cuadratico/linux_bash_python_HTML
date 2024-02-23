@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>JBL</title>
+</head>
+<body >
+    <div style="text-align: center;">
+        <img src="Jbl.jpeg" width="500" height="400">
+        <h3>Esto es un altavoz JBL</h3>
+        <details>
+            <summary>Mas informacion</summary>
+             <p>Es de color negro</p>
+        </details>
+        <a href="formulario.html">
+            <button>Comprar</button>
+
+        </a>
+      </div>
+</body>
+</html>
