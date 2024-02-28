@@ -15,7 +15,7 @@ intentos_dge = 0
 numero_de_casa = []
 numero_de_tiendas = []
 dinero_invertico_en_cripto = []
-while not dinero_inicial < 10000: 
+while not dinero_inicial < 0: 
   division_dias = dia % 7
   print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa_mayuscula}\033[0m")
   print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO_mayuscula}\033[0m")
@@ -236,6 +236,7 @@ while not dinero_inicial < 10000:
         division1_1 = pregunta_d1 / precio_actual
         dinero_invertico_en_cripto[posicion1] = division1_1
         #esta pospuesta 
+
   def ganancias_perdidias():  
     global dinero_inicial, numero_de_casa, numero_de_tiendas
     if "1" in numero_de_casa:
@@ -292,4 +293,13 @@ while not dinero_inicial < 10000:
     #resta_dias = dia -1 
     #dia = resta_dias
     #print("\033[31mParece que has escrito algo mal\033[0m")
-  
+  if dinero_inicial < 10000:
+   with open("Juego_de_economia.txt", "w+") as f:
+     f.write(f"Nombre del CEO: {nombre_CEO_mayuscula}\n")
+     f.write(f"Nombre de la empresa: {nombre_empresa_mayuscula}\n")
+     f.write(f"Dinero: {dinero_inicial}\n")
+     f.write(f"Dias: {dia}\n")
+     f.write(f"Numero de casas: {numero_de_casa}\n")
+     f.write(f"Numero de tiendas: {numero_de_tiendas}\n")
+     f.write(f"Numero de criptomonedas: {dinero_invertico_en_cripto}\n")
+
