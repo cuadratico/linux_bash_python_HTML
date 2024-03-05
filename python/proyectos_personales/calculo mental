@@ -1,0 +1,18 @@
+#calculo mental
+
+import random
+numero1 = random.randint(0, 100)
+numero2 = random.randint(0, 100)
+numeor3 = random.randint(0, 100)
+numero4 = random.randint(0, 100)
+numero5 = random.randint(0, 100)
+
+suma = numero1 + numero2 + numeor3 + numero4 + numero5
+print(f"{numero1} + {numero2} + {numeor3} + {numero4} + {numero5}")
+
+pregunta = int(input("Dime el resultado de la suma\n"))
+
+if pregunta == suma:
+    print("Has acertado")
+else:
+    print("No has acertado")
