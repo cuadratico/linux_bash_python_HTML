@@ -1,0 +1,19 @@
+from email.message import EmailMessage
+import smtplib
+
+
+remitente = input("Cual es tu Gmail\n")
+destinatario = "ejemplo@gmial.com"
+mensaje = input("Cual es el problema que quieres informar\n")
+subject = input("Cual quieres que sea el titulo del email\n")
+email = EmailMessage()
+email["From"] = remitente
+email["To"] = destinatario
+email["subject"] = subject
+email.set_content(mensaje)
+
+smtp = smtplib.SMTP_SSL("smtp.gmail.com")
+smtp.login(remitente, "llave de Google")
+smtp.sendmail(remitente, destinatario, email.as_string())
+
+smtp.quit()
