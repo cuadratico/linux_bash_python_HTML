@@ -1,0 +1,27 @@
+#Piedra, papel y tijeras 
+import random
+while True:
+  #ordenador
+  ordenador = "Piedra Papel Tijera"
+  separador = ordenador.split()
+  randome = random.choice(separador)
+
+  #juego
+  pregunta = input("Quieres piedra, papel o tijera\n")
+  if pregunta.isnumeric() == True:
+   print("Error")
+   break
+  mayuscula = pregunta.capitalize()
+  print(randome)
+  if mayuscula == "Piedra" or mayuscula == "Papel" or mayuscula == "Tijera":
+   if mayuscula == "Piedra" and randome == "Tijera":
+    print("Has ganado")
+   elif mayuscula == "Papel" and randome == "Piedra":
+    print("Has ganado")
+   elif mayuscula == "Tijera" and randome == "Papel":
+    print("Has ganado")
+   elif mayuscula == randome:
+    print("Has empatado")
+   else:
+    print("Has perdido")
+ 
