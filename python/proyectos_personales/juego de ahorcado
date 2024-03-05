@@ -1,0 +1,29 @@
+#ahorcado
+import random 
+
+
+
+intentos = 0
+letras = []
+palabras = "Hola cuadratico seno Tirso"
+palabra_s = palabras.split()
+randome = random.choice(palabra_s)
+longitud = len(randome)
+
+while intentos < 15:
+ suma = intentos + 1 
+ intentos = suma
+ #palabra
+ print(f"La longitud de la palabra es de {longitud} letras")
+
+ #respuesta
+ print(letras)
+ pregunta = input("Dime una letra\n")
+ if pregunta in randome:
+    print("La letra esta en la palabra")
+    letras.append(pregunta)
+ elif pregunta in letras:
+    print("Esa letra ya la has dicho")
+ else:
+    print("Esa letra no esta")
+
