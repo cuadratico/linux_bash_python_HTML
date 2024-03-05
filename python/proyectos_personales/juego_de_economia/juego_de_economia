@@ -1,6 +1,8 @@
 #reparar la logica de la funcion inversion/vender, añadir la opcion de venta y el resto de criptomonedas
 # Y añadir un conversor de criptomonedas a euros y viceversa
 import ccxt
+from email.message import EmailMessage
+import smtplib
 print("Capitalism 3\n")
 nombre_empresa = input("Cual es el nombre de tu empresa\n")
 nombre_empresa_mayuscula = nombre_empresa.capitalize()
@@ -15,7 +17,8 @@ intentos_dge = 0
 numero_de_casa = []
 numero_de_tiendas = []
 dinero_invertico_en_cripto = []
-while not dinero_inicial < 0: 
+if dinero_inicial == 100000 or dinero_inicial == 1000000 or dinero_inicial == 10000000:
+ while not dinero_inicial < 10: 
   division_dias = dia % 7
   print(f"\033[1m\033[33mEl nombre de tu empresa es : {nombre_empresa_mayuscula}\033[0m")
   print(f"\033[1m\033[33mEl nombre de tu CEO es: {nombre_CEO_mayuscula}\033[0m")
@@ -26,6 +29,8 @@ while not dinero_inicial < 0:
   print(f"\033[1m\033[33mTienes las tiendas: {numero_de_tiendas}\033[0m")
   print(f"\033[1m\033[33mTienes las inversiones: {dinero_invertico_en_cripto}\033[0m") 
   print(valor_de_dinero) 
+
+  #Edificios
   def bienes_raizes():
     global dinero_inicial
     global numero_de_casa
@@ -34,7 +39,8 @@ while not dinero_inicial < 0:
     if quieres_v_c_br == "comprar":
      casas_c_br = {
         "1:Edificio_Atlantis":"valor:100.000€:coste:10.000€/mes:ganancias:35.000€/mes",
-        "2:Edificio_cosco":"valor:45.000€:coste:6.000€/mes:ganacias:12.000€/mes"
+        "2:Edificio_cosco":"valor:45.000€:coste:6.000€/mes:ganacias:12.000€/mes", 
+        "3:Edificio_carter":"valor:250.000€ coste:15.000€/sem gananacias:24.000€/sem"
      }
      print(casas_c_br)
      pregunta_compra_br = int(input("\033[34mQue numero de edificio quieres comprar\033[0m\n"))
@@ -57,10 +63,22 @@ while not dinero_inicial < 0:
         else:
           print("\033[31mYa tienes la casa\033[0m")
 
+     #Edificio_3_compra 
+     if pregunta_compra_br == 3:
+        if not "3" in numero_de_casa:
+         resta3_br_c = dinero_inicial - 250000
+         dinero_inicial = resta3_br_c
+         numero_de_casa.append("3")
+         print(f"\033[34mTe has gastado 250.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
+        else:
+          print("\033[31mYa tienes la casa\033[0m")
+    
+    #Vender_Edificios
     if quieres_v_c_br == "vender":
       casass_v_br = {
-        "1:Edificio_Atlantis":"valor:100.000€:coste:10.000€/mes:ganancias:35.000€/mes",
-        "2:Edificio_cosco":"valor:45.000€:coste:6.000€/mes:ganacias:12.000€/mes"
+        "1:Edificio_Atlantis":"valor:100.000€: coste:10.000€/mes ganancias:35.000€/mes\n",
+        "2:Edificio_cosco":"valor:45.000€ coste:6.000€/mes ganacias:12.000€/mes",
+        "3:Edificio_carter":"valor:250.000€ coste:15.000€/sem gananacias:24.000€/sem"
      }
       print(casass_v_br)
       pregunta_venta_br = int(input("Que numero de edificio quieres vender\n"))
@@ -83,16 +101,28 @@ while not dinero_inicial < 0:
         else:
           print("\033[31mNo tienes la casa\033[0m")
 
-  
+      #Edificio_3_venta
+      if pregunta_venta_br == 3:
+        if "3" in numero_de_casa:
+         suma3_br_v = dinero_inicial + 250000
+         dinero_inicial = suma3_br_v
+         numero_de_casa.remove("3")
+         print("\033[34mHas vendido la casa 3 y has ganado: 250.000€\033[0m")
+        else:
+          print("\033[31mNo tienes la casa\033[0m")
+
+  #Tiendas
   def tiendas():
     global dinero_inicial, numero_de_tiendas
     quieres_v_c_t = input("Que quieres hacer vender/comprar\n")
     if quieres_v_c_t == "comprar":
      casas_t_c = {
-        "1:Tienda_Atlanta":"valor:85.000€:coste:7.000€/mes:ganancias:15.000€/mes",
-        "2:Tienda_cosco":"valor:60.000€:coste:5.600€/mes:ganacias:9.000€/mes"
+        "1:Tienda_Atlanta":"valor:85.000€ coste:7.000€/mes ganancias:15.000€/mes\n",
+        "2:Tienda_cosco":"valor:60.000€ coste:5.600€/mes ganacias:9.000€/mes"
      }
      print(casas_t_c)
+
+     #Compra de tiendas
      pregunta_compra_t = int(input("\033[38;5;216mQue numero de tienda quieres comprar\033[0m\n"))
 
      if pregunta_compra_t == 1:
@@ -112,11 +142,12 @@ while not dinero_inicial < 0:
          print(f"\033[38;5;216mTe has gastado 60.000€ por lo que te quedan: {dinero_inicial}€\033[0m")
         else:
           print("\033[31mYa tienes la tienda\033[0m")
-
+          
+    #Venta de tiendas 
     if quieres_v_c_t == "vender":
       casass_t_v = {
         "1:Tienda_Atlanta":"valor:85.000€:coste:7.000€/mes:ganancias:15.000€/mes",
-        "2:Tienda_cosco":"valor:60.000€:coste:5.600€/mes:ganacias:9.000€/mes"
+        "2:Tienda_cosco":"valor:60.000€:coste:5.600€/mes:ganacias:9.000€/mes",
      }
       print(casass_t_v)
       pregunta_venta_t = int(input("\033[38;5;216mQue numero de tienda quieres vender\033[0m\n"))
@@ -235,7 +266,7 @@ while not dinero_inicial < 0:
         dinero_inicial = suma_v
         division1_1 = pregunta_d1 / precio_actual
         dinero_invertico_en_cripto[posicion1] = division1_1
-        #esta pospuesta 
+        # pospuesto 
 
   def ganancias_perdidias():  
     global dinero_inicial, numero_de_casa, numero_de_tiendas
@@ -251,6 +282,12 @@ while not dinero_inicial < 0:
       resta_perdidas1_1 = dinero_inicial - 6000
       dinero_inicial = resta_perdidas1_1
       print(f"Ganancias de 12.000€ y perdidas de 6.000€: {dinero_inicial}")
+    if "3" in numero_de_casa:
+      suma_ganancias1_2 = dinero_inicial + 24000
+      dinero_inicial = suma_ganancias1_2
+      resta_perdidas1_2 = dinero_inicial - 15000
+      dinero_inicial = resta_perdidas1_2
+      print(f"Ganancias de 24.000€ y perdidas de 15.000€: {dinero_inicial}")
     if "1" in numero_de_tiendas:
       suma_ganancias2 = dinero_inicial + 15000
       dinero_inicial = suma_ganancias2
@@ -289,11 +326,9 @@ while not dinero_inicial < 0:
    inversion()
   elif division_dias == 0:
    ganancias_perdidias()
-  #else:
-    #resta_dias = dia -1 
-    #dia = resta_dias
-    #print("\033[31mParece que has escrito algo mal\033[0m")
-  if dinero_inicial < 10000:
+  else:
+    print("\033[31mParece que has escrito algo mal\033[0m")
+  if dinero_inicial < 10:
    with open("Juego_de_economia.txt", "w+") as f:
      f.write(f"Nombre del CEO: {nombre_CEO_mayuscula}\n")
      f.write(f"Nombre de la empresa: {nombre_empresa_mayuscula}\n")
@@ -302,4 +337,26 @@ while not dinero_inicial < 0:
      f.write(f"Numero de casas: {numero_de_casa}\n")
      f.write(f"Numero de tiendas: {numero_de_tiendas}\n")
      f.write(f"Numero de criptomonedas: {dinero_invertico_en_cripto}\n")
+else:
+  print("Esa no es la cantidad de dinero")
 
+report = input("Quieres informar de algun problema: S/N")
+mayuscula_r = report.capitalize()
+if dinero_inicial < 10 and mayuscula_r == "S":
+ remitente = input("Cual es tu Gmail\n")
+ destinatario = "tirsi333@gmail.com"
+ mensaje = input("Cual es el problema que quieres informar\n")
+ subject = input("Cual quieres que sea el titulo del email\n")
+ email = EmailMessage()
+ email["From"] = remitente
+ email["To"] = destinatario
+ email["subject"] = subject
+ email.set_content(mensaje)
+
+ smtp = smtplib.SMTP_SSL("smtp.gmail.com")
+ smtp.login(remitente, "etid mgby ivkq wyce")
+ smtp.sendmail(remitente, destinatario, email.as_string())
+ smtp.quit()
+ print("\033[31mGracias por jugar\033[0m")
+else: 
+  print("Gracias por jugar")
