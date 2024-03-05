@@ -1,0 +1,26 @@
+#adivina el numero
+import random
+
+numero = random.randint(1, 100)
+print(numero)
+
+
+
+pregunta = int(input("Dime el numero\n"))
+if pregunta > numero:
+        print("Menos")
+elif pregunta < numero:
+        print("Mas")
+elif pregunta == numero:
+        print("Has acertado")
+
+
+while pregunta != numero:
+ 
+ pregunta = int(input("Dime el numero\n"))
+ if pregunta > numero:
+        print("Menos")
+ elif pregunta < numero:
+        print("Mas")
+ elif pregunta == numero:
+        print("Has acertado")
