@@ -2,11 +2,12 @@ import os
 #biblioteca para leer lineas de codigo
 from itertools import islice
 
+
 #creacion del archivo
 with open ("archivo.txt", "w+") as f:
     f.write("Hola\n")
     f.write("Adios\n")
-    f.write("Que tal")
+    f.write("1")
 
 #confirma la existencia del archivo
 existencia = os.path.exists("archivo.txt")
@@ -16,9 +17,12 @@ if existencia == True:
  #habre el archivo
  with open("archivo.txt", "r") as f:
     #lee una linea en especifico
-    lineas = islice(f, 1, 2)
+    lineas = islice(f, 2, 3)
     #saca un bucle for de lineas y de esta manera imprime todo
     for linea in lineas:
      #elimina los espacios con la funcion strip que funciona para eliminar espacios
-     print(linea.strip())
- 
+     espacio = linea.strip()
+     print(espacio)
+ entero = int(espacio)
+ suma = entero + 9
+ print(suma)
