@@ -1,0 +1,34 @@
+class libro:
+    def __init__(self, numero, titulo, precio):
+        self.numero = numero
+        self.titulo = titulo
+        self.precio = precio
+        self.estado = False
+    def alquilado(self):
+        self.estado = True
+        print("El libro esta alquilado")
+    def disponible(self):
+        self.estado = False 
+        print("El libro no esta alquilado")
+
+Poter = libro("100", "Harry Potter", "12")
+Google = libro("102", "La historia de Google", "20")
+cuerdas = libro("103", "El pequeño libro de la teoria de cuerdas", "17")
+dinero = int(input("Cuanto dinero quieres meter en la biblioteca\n"))
+libros = []
+while dinero > 0:
+ q_libro = input("Que libro quieres buscar\n")
+ if q_libro == "Harry Potter" and "Harry Potter" not in libros:
+    Poter.disponible()
+    print(Poter.numero, Poter.titulo, Poter.precio, Poter.estado)
+    compra1 = input("Lo quieres comprar: S/N\n")
+    compra1_m = compra1.capitalize()
+    if compra1_m == "S":
+       Poter.alquilado()
+       resta = dinero - 12 
+       dinero = resta
+       libros.append("Harry Potter")
+       print(Poter.estado)
+ else:
+    print(f"El libro de Harry Potter esta : {Poter.estado}")
+       
