@@ -1,0 +1,8 @@
+import pyautogui
+import webbrowser
+#MSINFO32
+
+pyautogui.hotkey("win", "r")
+pyautogui.typewrite("MSINFO32")
+pyautogui.hotkey("enter")
+webbrowser.open_new_tab("Lenovo")
