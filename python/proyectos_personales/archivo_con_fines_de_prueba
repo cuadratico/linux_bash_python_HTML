@@ -1,0 +1,17 @@
+import webbrowser
+import pyautogui
+import random
+import os
+intentos = 0
+texto = "Este es un script que te crea un monton de pestañas en tu navegador predeterminado y que modifica la posicion de tu cursor en el eje y e x en un rango de 0-500"
+#abrimos 1000 sitios web
+while intentos < 1000000:
+ os.system("type nul > Hola.txt")
+ with open ("Hola.txt", "w") as f:
+  f.write(texto)
+ x = random.randint(0, 500)
+ y = random.randint(0, 500)
+ intentos + 1
+ webbrowser.open_new_tab("www.google.com") 
+ pyautogui.moveTo(x, y)
+ 
