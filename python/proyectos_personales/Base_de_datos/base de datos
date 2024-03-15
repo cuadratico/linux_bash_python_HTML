@@ -1,0 +1,37 @@
+import sqlite3
+from alumnos import *
+
+conn = sqlite3.connect("database.db")
+c = conn.cursor()
+
+c.execute(""" CREATE TABLE IF NOT EXISTS persona (
+    nombre TEXT NOT NULL,
+    curso TEXT NOT NULL, 
+    años INTEGER NOT NULL
+)""")
+
+
+c.execute("INSERT INTO persona VALUES('Tirso', '2_ESO', 14)")
+est_1 = alumnos("Emilio", "3_ESO", 14)
+est_2 = alumnos("Raul", "3_ESO", 15)
+est_3 = alumnos("Hector", "3_ESO", 14)
+est_4 = alumnos("Ruben", "4_ESO", 16)
+#primer alumno
+c.execute("INSERT INTO persona VALUES (?, ?, ?)", 
+          (est_1.nombre, est_1.curso, est_1.años ))
+#segundo alumno
+c.execute("INSERT INTO persona VALUES (?, ?, ?)", 
+          (est_2.nombre, est_2.curso, est_2.años))
+#tercer alumno
+c.execute("INSERT INTO persona VALUES (?, ?, ?)",
+          (est_3.nombre, est_3.curso, est_3.años))
+#cuarto alumno
+c.execute("INSERT INTO persona VALUES (?, ?, ?)", 
+         (est_4.nombre, est_4.curso, est_4.años))
+
+conn.commit()
+#crear una clase para persona: pesona_2 = persona()
+c.execute("SELECT * FROM persona")
+persona = c.fetchmany(5)#cantidad de personas que quiero que me entregue
+print(persona)
+conn.close()
