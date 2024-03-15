@@ -1,0 +1,5 @@
+class alumnos:
+    def __init__(self, nombre, curso, años):
+        self.nombre = nombre
+        self.curso = curso
+        self.años = años
