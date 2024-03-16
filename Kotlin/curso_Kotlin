@@ -1,0 +1,85 @@
+import com.sun.jdi.IntegerType
+
+fun main() {
+    //imprimir datos en pantalla
+    /*
+    comentario en varias lineas
+     */
+    println("Hola")
+    // variable
+    //type string
+    var string = "Esto es una varibale"
+    string = "aqui cambio el valor de la cadena de texto"
+    println(string)
+    var cadena: String = "cadena de texto"
+
+    //type integer
+    var numero: Int = 7
+    numero = numero + 1
+    println(numero)
+    //type Double = float
+    var decimal: Double = 7.5
+    var floato: Float = 7.5f// se declara con f
+    println(floato)
+    println(decimal + 1.0)
+    // type booleano
+    var boleano = "hola"//true en minusculas
+    println(boleano)
+    //condiciones
+    if (boleano == "true") {
+        println("El valor es True")
+    } else if (boleano == "false"){
+        print("El valor es false")
+    }else{
+        println("Cosa contraria")
+    }
+    //listas
+    val lista = mutableListOf<String>("Tirso", "Zaforas")
+    var lista2 = listOf<Int>(14)
+    var lista3 = listOf<Double>(1.75)
+    lista.add("Nombre")
+    println(lista)
+    println(lista2)
+    println(lista3)
+
+    //sets
+    val setss = setOf<String>("Tirso", "Zaforas", "Vilchez", "Tirso")//no puede mutar
+    println(setss)
+
+    //mapas
+    val mapa = mutableMapOf("Brais" to 36)
+    mapa.put("Tirso", 14)//añade este elemento a la lista
+    println(mapa["Tirso"])//me saca el dato que almacena este elemento
+
+    // bucle for
+    for (voule in lista){
+        println(voule)
+    }
+
+    // bucle while
+    var numeros = 0
+    while (numeros < 5){
+        numeros += 1
+        println("Hola")
+    }
+    // Opcionales
+    var opc: String? = null
+    println(opc)
+    opc = "Hola"
+    println(opc)
+
+    //funciones
+    funcion()
+    //clases
+    //var clases = clase(name:"Tirso", age:12)
+
+    print("Este es el valor de la lista:$lista")
+
+    //pregunta
+    val nombre = readLine()
+    print("Tu nombre es $nombre")
+}
+fun funcion(){
+    println("Hola que tal")
+}
+class clase(val name: String, val age: Int)
