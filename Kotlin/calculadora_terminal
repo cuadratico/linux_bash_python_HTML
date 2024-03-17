@@ -1,0 +1,23 @@
+fun main(){
+    while(true){
+        print("Que quieres hacer: sumar, restar, dividir, multiplicar\n")
+        var pregunta = readln()
+        print("Dime un numero\n")
+        var numero1 = readln().toInt()
+        print("Dime otro numero\n")
+        var numero2 = readln().toInt()
+        if (pregunta == "sumar"){
+            var suma = numero1 + numero2
+            println("$numero1 + $numero2 = $suma")
+        }else if(pregunta == "restar"){
+            var resta = numero1 - numero2
+            println("$numero1 - $numero2 = $resta")
+        }else if(pregunta == "dividir"){
+            var division = numero1 / numero2
+            println("$numero1 / $numero2 = $division")
+        }else if(pregunta == "multiplicar"){
+            var multiplicar = numero1 * numero2
+            println("$numero1 * $numero2 = $multiplicar")
+        }
+    }
+}
