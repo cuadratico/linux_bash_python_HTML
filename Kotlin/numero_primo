@@ -1,0 +1,18 @@
+fun main(){
+    var intentos = 0
+    while(intentos < 3) {
+        intentos++
+        print("Dime un numero\n")
+        var numero = readln().toInt()
+        var numero2 = 2
+        var division = numero % numero2
+        if (division == 0) {
+            println("El numero es primo")
+        } else {
+            println("El numero no es primo")
+        }
+        if (intentos == 3) {
+            println("Final del juego")
+        }
+    }
+}
