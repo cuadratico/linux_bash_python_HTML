@@ -1,0 +1,38 @@
+#!/bin/bash 
+
+
+echo "[1] Virus-Builder"
+echo "[2] evillimiter"
+echo "[3] evilTrust"
+echo "[4] wifite2"
+echo "[5] zphisher"
+echo "[6] exiftool"
+echo "[7] TheFatRat"
+echo "[8] fake-sms"
+echo "[9] old"
+
+read -p "Escoge un numero: " numero
+
+if [ $numero -eq 1 ]; then
+read -p "quieres intalar[1] o iniciar[2]: " ini
+if [ $ini -eq 1 ]; then
+git clone https://github.com/Cyber-Dioxide/Virus-Builder/
+cd Virus-Builder
+ls
+pip install -r requirements.txt
+python3 Builder.py
+elif [ $ini -eq 2 ]; then
+cd Virus-Builder
+python3 Builder.py
+fi
+elif [ $numero -eq 2 ]; then
+read -p "quieres intalar[1] o iniciar[2]: " ini
+if [ $ini -eq 1 ]; then 
+git clone https://github.com/bitbrute/evillimiter.git
+cd evillimiter 
+sudo python3 setup.py install
+evillimiter
+elif [ $ini -eq 2 ]; then
+evillimiter
+fi
+fi
